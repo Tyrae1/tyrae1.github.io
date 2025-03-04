@@ -1,0 +1,94 @@
+@font-face{
+    font-family: "Cera Pro Regular";
+    src: 
+        url("fonts/CeraPro-Regular.eot") format("eot"), 
+        url("fonts/CeraPro-Regular.ttf") format("TrueType"), 
+        url("fonts/CeraPro-Regular.woff") format("woff");
+    font-weight: 400;
+}
+@font-face{
+    font-family: "Cera Pro Medium";
+    src: 
+        url("fonts/CeraPro-Medium.eot") format("eot"), 
+        url("fonts/CeraPro-Medium.ttf") format("TrueType"), 
+        url("fonts/CeraPro-Medium.woff") format("woff");
+    font-weight: 500;
+}
+@font-face{
+    font-family: "Cera Pro Bold";
+    src: 
+        url("fonts/CeraPro-Bold.eot") format("eot"), 
+        url("fonts/CeraPro-Bold.ttf") format("TrueType"), 
+        url("fonts/CeraPro-Bold.woff") format("woff");
+    font-weight: 700;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-style: normal;
+    box-sizing: border-box;
+}
+header{
+    padding: 30px 120px;
+    margin-bottom: 12px;
+}
+.header{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(70, 163, 88, 0.50);
+}
+.list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*Шрифти не підвантажитился тому дописав локальні параметри. Вирішити це питання ще не встиг.*/
+.list-item{
+    padding: 8px 25px 25px;
+    font-family: 'Cera Pro Regular';
+    color: #3D3D3D;
+    font-size: 16px;
+    font-weight: 400; 
+}
+.list-item:hover{
+    background-color: #000000;
+}
+.list-item:active{
+    border-bottom: 3px solid #46A358;
+    font-family: 'Cera Pro Bold', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+}
+.cta{
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    width: 100px;
+    height: 35px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    background: #46A358;
+    }
+.svglogin{
+    width: 16.278px;
+    height: 15.417px;
+    flex-shrink: 0;
+}
+.container{
+    display: flex;
+    height: 450px;
+    background: linear-gradient(98deg, rgba(245, 245, 245, 0.50) -23.46%, rgba(245, 245, 245, 0.50) 107.51%);
+}
+.left{
+    width: 1200px;
+    flex-shrink: 0;
+}
+.right{
+    width: 507px;
+    flex-shrink: 0;
+}
