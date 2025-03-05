@@ -31,10 +31,10 @@
     box-sizing: border-box;
 }
 header{
-    padding: 30px 120px;
-    margin-bottom: 12px;
+    
     width: 1200px;
     height: 53px;
+    margin: 30px 120px 0;
 }
 .header{
     display: flex;
@@ -57,6 +57,12 @@ header{
 }
 .list-item:hover{
     background-color: rgba(70, 163, 88, 0.50);
+}
+#active{
+    border-bottom: 3px solid #46A358;
+    font-family: 'Cera Pro Bold', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
 }
 .list-item:active{
     border-bottom: 3px solid #46A358;
@@ -86,11 +92,13 @@ header{
     height: 450px;
     width: 1200px;
     background: linear-gradient(98deg, rgba(245, 245, 245, 0.50) -23.46%, rgba(245, 245, 245, 0.50) 107.51%);
-    margin: 12px 120px 52px;
+    margin:12px 120px 52px;
 }
 .left{
     width: 693px;
-    margin-left: 43px;
+    flex-shrink: 0;
+    padding-left: 43px;
+    padding-top: 68px;
 }
 .right{
     width: 507px;
@@ -110,42 +118,41 @@ header{
     font-weight: 700;
     line-height: 20px;
     text-transform: uppercase;
+    margin-top: 44px;
+    margin-bottom: 85px;
 }
-#text1{
+.textWelcome{
     color: #3D3D3D;
-    font-family: "Cera Pro";
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
-    line-height: 16px; /* 114.286% */
+    line-height: 16px;
     letter-spacing: 1.4px;
     text-transform: uppercase;
+    padding-top: 5px;
 }
-#text2{
-    
+.textLets{
     font-family: "Cera Pro";
     font-size: 70px;
     font-style: normal;
     font-weight: 900;
     line-height: 70px;
     text-transform: uppercase;
+    padding-top: 5px;
 }
-#text2.green{
-    font-family: "Cera Pro";
-    font-size: 70px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 70px;
-    text-transform: uppercase;
+#textLetsdark{
+    color: #3D3D3D;
+}
+#textLetsgreen{
     color: #46A358;
 }
-#text3{
-    width: 557px;
+.textDescr{
+    width: ;
     height: 45px;
     flex-shrink: 0;
     color: #727272;
-    font-family: "Cera Pro";
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px;}
+    line-height: 24px;
+    padding-top: 5px;}
