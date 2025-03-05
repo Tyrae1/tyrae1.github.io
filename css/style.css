@@ -147,8 +147,11 @@ header{
     color: #46A358;
 }
 .textDescr{
-    width: ;
+    width: 557px;
     height: 45px;
+    /*overflow: hidden;*/
+    /*white-space: nowrap;*/
+    /*text-overflow: ellipsis;*/
     flex-shrink: 0;
     color: #727272;
     font-size: 14px;
