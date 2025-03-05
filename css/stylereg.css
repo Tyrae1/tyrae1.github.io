@@ -18,10 +18,10 @@
     font-weight: 500; 
     line-height: 16px;
 }
-#t1td1{
+#headword1{
     color: #3D3D3D
 }
-#t1td3{
+#headword2{
     color: #46A358;
 }
 .text1{
@@ -59,12 +59,12 @@ input{
     font-weight: 700; 
     line-height: 16px;
 }
-#t2td1{
+#bottomline{
     width: 97px; 
     height: 1px; 
     color: #EAEAEA;
     text-align: center;}
-#t2td2{
+#bottomword{
     color: #3D3D3D; 
     font-size: 13px; 
     font-style: normal; 
