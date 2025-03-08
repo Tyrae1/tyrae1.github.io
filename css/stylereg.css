@@ -80,7 +80,7 @@ input{
     border-radius: 5px; 
     background: #FFF; 
     color: #727272; 
-    text-align: center; 
+    align-items: center; 
     font-size: 13px; 
     font-style: normal; 
     font-weight: 500; 

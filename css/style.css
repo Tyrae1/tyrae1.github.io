@@ -1,25 +1,25 @@
 @font-face{
-    font-family: "Cera Pro Regular";
+    font-family: Cera Pro Regular;
     src: 
-        url("fonts/CeraPro-Regular.eot") format("eot"), 
-        url("fonts/CeraPro-Regular.ttf") format("TrueType"), 
-        url("fonts/CeraPro-Regular.woff") format("woff");
+        url("../fonts/CeraPro-Regular.eot") format("eot"), 
+        url("../fonts/CeraPro-Regular.ttf") format("TrueType"), 
+        url("../fonts/CeraPro-Regular.woff") format("woff");
     font-weight: 400;
 }
 @font-face{
     font-family: "Cera Pro Medium";
     src: 
-        url("fonts/CeraPro-Medium.eot") format("eot"), 
-        url("fonts/CeraPro-Medium.ttf") format("TrueType"), 
-        url("fonts/CeraPro-Medium.woff") format("woff");
+        url("../fonts/CeraPro-Medium.eot") format("eot"), 
+        url("../fonts/CeraPro-Medium.ttf") format("TrueType"), 
+        url("../fonts/CeraPro-Medium.woff") format("woff");
     font-weight: 500;
 }
 @font-face{
     font-family: "Cera Pro Bold";
     src: 
-        url("fonts/CeraPro-Bold.eot") format("eot"), 
-        url("fonts/CeraPro-Bold.ttf") format("TrueType"), 
-        url("fonts/CeraPro-Bold.woff") format("woff");
+        url("../fonts/CeraPro-Bold.eot") format("eot"), 
+        url("../fonts/CeraPro-Bold.ttf") format("TrueType"), 
+        url("../fonts/CeraPro-Bold.woff") format("woff");
     font-weight: 700;
 }
 *{
@@ -46,13 +46,10 @@ header{
     align-items: center;
     justify-content: center;
 }
-/*Шрифти не підвантажитился тому дописав локальні параметри. Вирішити це питання ще не встиг.*/
 .list-item{
     padding: 8px 25px 25px;
     font-family: 'Cera Pro Regular';
     color: #3D3D3D;
-    font-size: 16px;
-    font-weight: 400; 
 }
 .list-item:hover{
     background-color: rgba(70, 163, 88, 0.50);
@@ -60,21 +57,18 @@ header{
 #active{
     border-bottom: 3px solid #46A358;
     font-family: 'Cera Pro Bold', sans-serif;
-    font-weight: 700;
-    font-size: 16px;
 }
 .list-item:active{
     border-bottom: 3px solid #46A358;
     font-family: 'Cera Pro Bold', sans-serif;
-    font-weight: 700;
-    font-size: 16px;
 }
 .buttonlogin{
     color: #FFF;
-    font-size: 16px;
+    font-family: 'Cera Pro Medium';
+    /*font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: normal;
+    line-height: normal;*/
     width: 100px;
     height: 35px;
     flex-shrink: 0;
@@ -111,30 +105,30 @@ header{
     height: 40px;
     flex-shrink: 0;
     color: #FFF;
-    font-family: "Cera Pro";
-    font-size: 16px;
+    font-family: "Cera Pro Bold";
+    /*font-size: 16px;
     font-style: normal;
-    font-weight: 700;
-    line-height: 20px;
+    line-height: 20px;*/
     text-transform: uppercase;
     margin-top: 44px;
     margin-bottom: 85px;
 }
 .textWelcome{
     color: #3D3D3D;
-    font-size: 14px;
+    font-family: 'Cera Pro Medium';
+    /*font-size: 14px;
     font-style: normal;
     font-weight: 500;
-    line-height: 16px;
+    line-height: 16px;*/
     letter-spacing: 1.4px;
     text-transform: uppercase;
     padding-top: 5px;
 }
 .textLets{
-    font-family: "Cera Pro";
+    font-family: "Cera Pro Bold";
     font-size: 70px;
     font-style: normal;
-    font-weight: 900;
+    /*font-weight: 900;*/
     line-height: 70px;
     text-transform: uppercase;
     padding-top: 5px;
@@ -146,16 +140,17 @@ header{
     color: #46A358;
 }
 .textDescr{
-    box-sizing: ;
+    /*box-sizing: ;
     width: 557px;
-    height: 45px;
+    height: 45px;*/
     /*overflow: hidden;*/
     /*white-space: nowrap;*/
     /*text-overflow: ellipsis;*/
     flex-shrink: 0;
     color: #727272;
-    font-size: 14px;
+    font-family: 'Cera Pro Regular';
+    /*font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 24px;*/
     padding-top: 5px;}
