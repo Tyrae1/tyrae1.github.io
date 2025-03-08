@@ -31,7 +31,6 @@
     box-sizing: border-box;
 }
 header{
-    
     width: 1200px;
     height: 53px;
     margin: 30px 120px 0;
@@ -101,7 +100,7 @@ header{
     padding-top: 68px;
 }
 .right{
-    width: 507px;
+    /*width: 507px;*/
     flex-shrink: 0;
     
 }
@@ -147,6 +146,7 @@ header{
     color: #46A358;
 }
 .textDescr{
+    box-sizing: ;
     width: 557px;
     height: 45px;
     /*overflow: hidden;*/
