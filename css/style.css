@@ -63,17 +63,16 @@ header{
     font-family: 'Cera Pro Bold', sans-serif;
 }
 .buttonlogin{
+    display: flex;
+    border: none;
+    align-items: center;
+    justify-content: center;
     color: #FFF;
     font-family: 'Cera Pro Medium';
-    /*font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;*/
-    width: 100px;
-    height: 35px;
-    flex-shrink: 0;
     border-radius: 6px;
     background: #46A358;
+    padding: 8px 17px;
+    gap: 4px;
     }
 .svglogin{
     width: 16.278px;
@@ -82,75 +81,57 @@ header{
 }
 .container{
     display: flex;
-    height: 450px;
-    width: 1200px;
     background: linear-gradient(98deg, rgba(245, 245, 245, 0.50) -23.46%, rgba(245, 245, 245, 0.50) 107.51%);
     margin:12px 120px 52px;
-}
-.left{
-    width: 693px;
-    flex-shrink: 0;
-    padding-left: 43px;
-    padding-top: 68px;
-}
-.right{
-    /*width: 507px;*/
-    flex-shrink: 0;
     
 }
-.buttonshop{
-    border-radius: 6px;
-    background: #46A358;
-    width: 140px;
-    height: 40px;
+.left{ 
+    padding: 68px 43px;
+    max-width: 693px;
+    }
+.right{
+    width: 507px;
     flex-shrink: 0;
+}
+.buttonshop{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    border: none;
+    background: #46A358;
+    padding: 11px 27px 9px 26px;
     color: #FFF;
     font-family: "Cera Pro Bold";
-    /*font-size: 16px;
-    font-style: normal;
-    line-height: 20px;*/
     text-transform: uppercase;
     margin-top: 44px;
-    margin-bottom: 85px;
+    
 }
 .textWelcome{
     color: #3D3D3D;
     font-family: 'Cera Pro Medium';
-    /*font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 16px;*/
     letter-spacing: 1.4px;
     text-transform: uppercase;
-    padding-top: 5px;
+    margin-top: 5px;
+    max-width: 100%;
 }
 .textLets{
     font-family: "Cera Pro Bold";
+    font-weight: 900;
     font-size: 70px;
     font-style: normal;
-    /*font-weight: 900;*/
     line-height: 70px;
     text-transform: uppercase;
-    padding-top: 5px;
-}
-#textLetsdark{
+    margin-top: 5px;
     color: #3D3D3D;
+    max-width: 100%;
 }
-#textLetsgreen{
+.textLetsgreen{
     color: #46A358;
 }
 .textDescr{
-    /*box-sizing: ;
-    width: 557px;
-    height: 45px;*/
-    /*overflow: hidden;*/
-    /*white-space: nowrap;*/
-    /*text-overflow: ellipsis;*/
     flex-shrink: 0;
     color: #727272;
     font-family: 'Cera Pro Regular';
-    /*font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px;*/
-    padding-top: 5px;}
+    margin-top: 5px;
+    max-width: 80%;}

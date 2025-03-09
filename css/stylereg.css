@@ -71,11 +71,13 @@ input{
     font-size: 14px;
      }
 #button1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 18px; 
-    width: 300px; 
-    height: 45px; 
-    flex-shrink: 0; 
-    border-radius: 5px; 
+    padding: 16px 118px; 
+    border-radius: 5px;
+    border: none;
     background: #46A358; 
     color: #FFF; 
     font-family: "Cera Pro Bold";;
@@ -92,11 +94,15 @@ input{
     text-align: center;
 }
 #button2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 7px; 
-    width: 300px; 
-    height: 40px; 
+    width: 300px;
+    height: 40px;
     flex-shrink: 0; 
-    border-radius: 5px; 
+    border-radius: 5px;
+    border: 1px solid #EAEAEA;
     background: #FFF; 
     color: #727272; 
     align-items: center; 
