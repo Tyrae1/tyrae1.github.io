@@ -83,6 +83,7 @@ header{
     display: flex;
     background: linear-gradient(98deg, rgba(245, 245, 245, 0.50) -23.46%, rgba(245, 245, 245, 0.50) 107.51%);
     margin:12px 120px 52px;
+    max-width: 1200px;
     
 }
 .left{ 
