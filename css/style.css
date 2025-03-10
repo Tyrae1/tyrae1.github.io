@@ -88,10 +88,10 @@ header{
 }
 .left{ 
     padding: 68px 43px;
-    max-width: 693px;
+    /*max-width: 693px;*/
     }
 .right{
-    width: 507px;
+    /*max-width: 507px;*/
     flex-shrink: 0;
 }
 .buttonshop{
