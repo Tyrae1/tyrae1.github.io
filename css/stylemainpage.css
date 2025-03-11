@@ -30,8 +30,10 @@
     font-style: normal;
     box-sizing: border-box;
 }
+.mainpage{
+    padding: 30px 120px 52px;
+}
 header{
-    width: 1200px;
     height: 53px;
     margin: 30px 120px 0;
 }
@@ -83,15 +85,12 @@ header{
     display: flex;
     background: linear-gradient(98deg, rgba(245, 245, 245, 0.50) -23.46%, rgba(245, 245, 245, 0.50) 107.51%);
     margin:12px 120px 52px;
-    max-width: 1200px;
-    
+    justify-content: space-between;  
 }
 .left{ 
     padding: 68px 43px;
-    /*max-width: 693px;*/
     }
 .right{
-    /*max-width: 507px;*/
     flex-shrink: 0;
 }
 .buttonshop{
@@ -125,7 +124,7 @@ header{
     text-transform: uppercase;
     margin-top: 5px;
     color: #3D3D3D;
-    max-width: 100%;
+    max-width: 70%;
 }
 .textLetsgreen{
     color: #46A358;
