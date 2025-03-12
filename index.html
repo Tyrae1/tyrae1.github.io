@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+   <div class="page"> 
     <div class="container">
         <div class="column-left">
             <aside>
@@ -31,20 +32,19 @@
             </aside>
         </div>
         <div class="column-right">
-            <header>
-            <div class="sortfilter">
+            <div class="header">
+                <div class="filter">
                 <a class="filter-item" id="activefilter">All Plant</a>
                 <a class="filter-item">New Arrivals</a>
                 <a class="filter-item">Sale</a>
-                <a class="textcategory">Sort by:</a>
-                <button class="sortbutton">
-                Default
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
-                <path d="M10.6667 1.66669L6.00004 6.33335L1.33337 1.66669" stroke="#3D3D3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                </div>
+                <a>Sort by: <button class="sortbutton">Default sorting
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                    <path d="M10.6667 1.66669L6.00004 6.33335L1.33337 1.66669" stroke="#3D3D3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                 </button>
+                </a>
             </div>
-            </header>
             <div class="store">
                 <div class="product">
                     <img src="./images/plant_barberton_daisy.png" alt="plant picture" class="img">
@@ -92,9 +92,19 @@
                     <p class="price">$39.00</p>
                 </div>
             </div>
-            </div>
-        </div>
-        
+        </div>         
     </div>
+    
+    <div class="pages">
+        <li class="pagebutton" id="activepage">1</li>
+        <li class="pagebutton">2</li>
+        <li class="pagebutton">3</li>
+        <li class="pagebutton">4</li>
+        <li class="pagebutton"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12" fill="none">
+            <path d="M1.375 0.75C1.375 0.75 6.625 3.858 6.625 6C6.625 8.14125 1.375 11.25 1.375 11.25" stroke="#3D3D3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg></li>
+    </div>  
+</div> 
+     
 </body>
 </html>
