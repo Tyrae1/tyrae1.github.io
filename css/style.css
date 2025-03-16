@@ -1,0 +1,63 @@
+@font-face{
+    font-family: "Cera Pro Regular";
+    src: 
+        url("../fonts/CeraPro-Regular.eot") format("eot"), 
+        url("../fonts/CeraPro-Regular.ttf") format("TrueType"), 
+        url("../fonts/CeraPro-Regular.woff") format("woff");
+    font-weight: 400;
+}
+@font-face{
+    font-family: "Cera Pro Medium";
+    src: 
+        url("../fonts/CeraPro-Medium.eot") format("eot"), 
+        url("../fonts/CeraPro-Medium.ttf") format("TrueType"), 
+        url("../fonts/CeraPro-Medium.woff") format("woff");
+    font-weight: 500;
+}
+@font-face{
+    font-family: "Cera Pro Bold";
+    src: 
+        url("../fonts/CeraPro-Bold.eot") format("eot"), 
+        url("../fonts/CeraPro-Bold.ttf") format("TrueType"), 
+        url("../fonts/CeraPro-Bold.woff") format("woff");
+    font-weight: 700;
+}
+@font-face{
+    font-family: "Hanging Letters";
+    src: 
+       url("../fonts/Hanged-Letters.ttf") format("TrueType"); 
+    font-weight: 400;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-style: normal;
+    box-sizing: border-box;}
+.page{
+    margin: 69px 120px;
+}
+.header{
+   display: flex;
+   gap: 30%;
+   align-items: center;
+   background-color: cyan;
+
+}
+.img{
+    width: 287px;
+    height: 292px;
+    flex-shrink: 0;
+}
+.blogs{
+    margin-top: 138px;
+    background-color: yellow;
+}
+.blogstore{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 35px;
+    gap: 43px;
+}
