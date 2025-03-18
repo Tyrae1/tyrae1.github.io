@@ -146,6 +146,7 @@
     font-family: "Cera Pro Regular";
     line-height: 100%; 
     gap: 30%;  
+    position: relative;
 }
 .price{
     color: #46A358;
@@ -189,4 +190,34 @@
 #activepage{
     background-color: #46A358;
     color: #fff;
+}
+.product:hover {
+    border-top: 3px solid #46A358;
+    scale: 110%;
+}
+.bucket{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 15%;
+    right: 0;
+    left: 0;
+    gap: 26px;
+    background: rgba(255,255,255,.5);
+    visibility: hidden;
+}
+.product:hover .bucket{
+    visibility: visible;
+}
+.buybuttons{
+    color: #3D3D3D;
+    border: none;
+    background: none;
+    width: 20px;
+    height: 20px;
+}
+.buybuttons:hover{
+    border:#46A358;
+    scale: 1.2;
 }
