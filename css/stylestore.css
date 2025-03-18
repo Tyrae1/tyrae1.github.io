@@ -221,3 +221,22 @@
     border:#46A358;
     scale: 1.2;
 }
+.discount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Cera Pro Medium';
+    color: #FFF;
+    font-size: 16px;
+    line-height: 16px;
+    padding: 6px 8px;
+    background-color: #46A358;
+    position: absolute;
+    left: 0;
+    top: 14px;
+}
+.oldprice{
+    color: #A5A5A5;
+    text-decoration: line-through;
+    font-family: 'Cera Pro Regular';
+}
