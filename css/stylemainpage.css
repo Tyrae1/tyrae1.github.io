@@ -52,6 +52,7 @@ header{
     padding: 8px 25px 25px;
     font-family: 'Cera Pro Regular';
     color: #3D3D3D;
+    position: relative;
 }
 .list-item:hover{
     background-color: rgba(70, 163, 88, 0.50);
@@ -135,3 +136,22 @@ header{
     font-family: 'Cera Pro Regular';
     margin-top: 5px;
     max-width: 80%;}
+.sub-list{
+    position: absolute;
+    display: none;
+}
+.sub-list-item{
+    display: none;
+    align-items: center;
+    color: #3D3D3D;
+    font-family: 'Cera Pro Regular';
+    font-size: 16px;
+    line-height: normal;
+    padding: 7px 102px 8px 14px;
+}
+.sub-list-item > a {
+    display: inline-block;
+}
+.list-item:hover > ul {
+    display: block;
+}

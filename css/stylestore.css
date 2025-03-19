@@ -147,7 +147,25 @@
     line-height: 100%; 
     gap: 30%;  
     position: relative;
+    transition: transform 0.3s ease-in-out;
 }
+.product::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px; 
+    background-color: #46A358;
+    transform: scaleX(0);
+    transform-origin: left;
+    /*transition: transform 0.3s ease-in-out;*/
+}
+.product:hover::before {
+    transform: scaleX(1);
+}
+.product:hover::before .bucket{
+    visibility: visible;}
 .price{
     color: #46A358;
     font-size: 18px;
@@ -191,10 +209,9 @@
     background-color: #46A358;
     color: #fff;
 }
-.product:hover {
+/*.product:hover {
     border-top: 3px solid #46A358;
-    scale: 110%;
-}
+}*/
 .bucket{
     display: flex;
     justify-content: center;
