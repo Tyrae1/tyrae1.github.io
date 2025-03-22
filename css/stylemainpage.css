@@ -53,13 +53,10 @@ header{
     font-family: 'Cera Pro Regular';
     color: #3D3D3D;
     position: relative;
+    display: inline-block;
 }
 .list-item:hover{
     background-color: rgba(70, 163, 88, 0.50);
-}
-#active{
-    border-bottom: 3px solid #46A358;
-    font-family: 'Cera Pro Bold', sans-serif;
 }
 .list-item:active{
     border-bottom: 3px solid #46A358;
@@ -138,20 +135,24 @@ header{
     max-width: 80%;}
 .sub-list{
     position: absolute;
+    padding-top: 12px;
+    min-width: 188px;
+    top: 100%;
+    left: -25%;
     display: none;
+    z-index: 1;
 }
 .sub-list-item{
-    display: none;
-    align-items: center;
     color: #3D3D3D;
     font-family: 'Cera Pro Regular';
     font-size: 16px;
     line-height: normal;
-    padding: 7px 102px 8px 14px;
+    padding: 7px 104px 8px 14px;
+    background-color: #EDF6EE;
 }
 .sub-list-item > a {
     display: inline-block;
 }
-.list-item:hover > ul {
+.list-item:hover > .sub-list {
     display: block;
 }
