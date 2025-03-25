@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-style: normal;
+    box-sizing: border-box;
+}
+@keyframes bouncing {
+    0% {
+        bottom: 0;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+    100% {
+        bottom: 50px;
+        box-shadow: 0 50px 50px rgba(0, 0, 0, 0.1);
+    }
+}
+a{
+    background: lightslategray;
+    border-radius: 2px;
+    display: inline-block;
+    color: white;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    padding: 1em 2em 1.1em;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: top;
+    margin-top: 50px;
+    animation-name: bouncing;
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier(0.1, 0.25, 0.1, 1);
+    animation-delay: 0s;
+    animation-iteration-count: infinite; /*Скільки разів анімація буде програватися. 1 за замовчуванням*/
+    animation-direction: alternate;
+    animation-fill-mode: both;
+    animation: bouncing 0.5s cubic-bezier(0.1, 0.25, 0.1, 1) 0s infinite alternate both;
+}
+/*
+animation 
+animation-name
+animation-duration
+animation-timing-function
+animation-delay
+animation-iteration-count
+animation-direction
+animation-fill-mode */
+
+
+
+body{
+    background-color: #77929F;
+
+}
+.preloader::after{
+    position: absolute;
+    top: 0;
+    bottom: 4%;
+    right: 0;
+    left: 0;
+    content: " ";
+    display: block;
+    margin: auto;
+    height: 32px;
+    width: 32px;
+    border: solid;
+    border-width: 4px;
+    border-radius: 50%;
+    border-top-color: #5fe1b3;
+    border-bottom-color: #a0efd2;
+    border-right-color: #a0efd2;
+    border-left-color: #a0efd2;
+    animation: rotating 1.1s linear infinite;
+}
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.custom-checkbox{
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 20px;
+    cursor: pointer;
+}
+.custom-check-icon{
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #50514F;
+    margin-right: 8px;
+}
+.custom-check-icon::before{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: pink;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+.custom-checkbox input:checked ~ .custom-check-icon::before {
+    display: block;
+}
+.custom-checkbox input {
+    display: none;
+}
