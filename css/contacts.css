@@ -30,7 +30,7 @@
     font-style: normal;
     box-sizing: border-box;
 }
-.page{
+.page_footer{
     margin: 91px 120px 22px;
-    background-color: green;
+    background-color: rgb(182, 167, 133);
 }
