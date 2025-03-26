@@ -32,5 +32,137 @@
 }
 .page_footer{
     margin: 91px 120px 22px;
-    background-color: rgb(182, 167, 133);
+}
+.footer-services{
+    background: #FBFBFB;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 24px 24px;
+}
+.footer-service{
+    min-width: 204px;
+}
+.footer-service-header{
+    color: #3D3D3D;
+    font-family: "Cera Pro Bold";
+    font-size: 17px;
+    line-height: 16px;
+    margin-top: 15px;
+}
+.footer-service-text{
+    margin-top: 9px;
+    color: #727272;
+    font-family: "Cera Pro Regular";
+    font-size: 14px;
+    line-height: 22px;
+    /*text-align: justify;*/
+}
+.footer-service-search{
+    min-width: 354px;
+}
+#footer-search-text {
+    margin-top: 18px;
+}
+.footer-input{
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.footer-input input{
+    flex: 1;
+    outline: none;
+    border-radius: 6px;
+    background: #FFF;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.06);
+    padding: 12px 60px 12px 11px;
+    border: none;
+    max-height: 40px;
+    box-sizing: border-box;
+    width: 100%;
+    }
+.footer-join-button{
+    position: absolute;
+    right: -18px;
+    top: inherit;
+    height: 100%;
+    border-radius: 0px 6px 6px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 18px; 
+    padding: 12px 26px; 
+    border: none;
+    background: #46A358; 
+    color: #FFF;
+    font-size: 18px;
+    font-family: "Cera Pro Bold";
+    line-height: 16px;
+    cursor: pointer;
+    max-height: 40px;
+}
+.footer-contacts{
+    display: flex;
+    background: linear-gradient(90deg, #EDF6EF 0%, #52C368 100%);
+    padding: 25px 24px 19px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #3D3D3D;
+    font-family: "Cera Pro Regular";
+    font-size: 14px;
+    line-height: 22px;
+    flex-wrap: wrap;
+}
+.footer-contact-adress{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.footer-menus{
+    background: #FBFBFB;
+    display: flex;
+    justify-content: space-between;
+    gap: 10%;
+    padding: 33px 155px 29px 25px;
+    min-width: 137px;
+}
+.footer-menu{
+    color: #3D3D3D;
+    font-family: "Cera Pro Regular";
+    font-size: 14px;
+    line-height: 30px;
+}
+.footer-menu-header{
+    color: #3D3D3D;
+    font-family: "Cera Pro Bold";
+    font-size: 18px;
+    line-height: 16px;
+}
+.footer-media{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin: 20px 34px 33px 0;
+}
+.footer-payment-img{
+    width: 224px;
+    height: 26px;
+    margin-top: 13px;
+}
+.page_footer_end{
+    color: #3D3D3D;
+    font-family: "Cera Pro Regular";
+    font-size: 14px;
+    line-height: 30px;
+    padding-top: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

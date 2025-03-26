@@ -80,7 +80,7 @@ input{
     border: none;
     background: #46A358; 
     color: #FFF; 
-    font-family: "Cera Pro Bold";;
+    font-family: "Cera Pro Bold";
 }
 #bottomline{
     width: 97px; 
@@ -105,7 +105,6 @@ input{
     border: 1px solid #EAEAEA;
     background: #FFF; 
     color: #727272; 
-    align-items: center; 
     font-family: "Cera Pro Medium";
     font-size: 13px;
 }
