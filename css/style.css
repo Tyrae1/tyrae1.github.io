@@ -1,0 +1,198 @@
+@font-face{
+    font-family: Cera Pro Regular;
+    src: 
+        url("../fonts/CeraPro-Regular.eot") format("eot"), 
+        url("../fonts/CeraPro-Regular.ttf") format("TrueType"), 
+        url("../fonts/CeraPro-Regular.woff") format("woff");
+    font-weight: 400;
+}
+@font-face{
+    font-family: "Cera Pro Medium";
+    src: 
+        url("../fonts/CeraPro-Medium.eot") format("eot"), 
+        url("../fonts/CeraPro-Medium.ttf") format("TrueType"), 
+        url("../fonts/CeraPro-Medium.woff") format("woff");
+    font-weight: 500;
+}
+@font-face{
+    font-family: "Cera Pro Bold";
+    src: 
+        url("../fonts/CeraPro-Bold.eot") format("eot"), 
+        url("../fonts/CeraPro-Bold.ttf") format("TrueType"), 
+        url("../fonts/CeraPro-Bold.woff") format("woff");
+    font-weight: 700;
+}
+@font-face{
+    font-family: "Hanging Letters";
+    src: 
+       url("../fonts/Hanged-Letters.ttf") format("TrueType"); 
+    font-weight: 400;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-style: normal;
+    box-sizing: border-box;
+}
+.mainpage{
+    padding: 30px 120px 52px;
+}
+header{
+    height: 53px;
+    margin: 30px 120px 0;
+}
+.header{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(70, 163, 88, 0.50);
+}
+.mplist{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mplist-item{
+    padding: 8px 25px 25px;
+    font-family: 'Cera Pro Regular';
+    color: #3D3D3D;
+    position: relative;
+    display: inline-block;
+    border-bottom: 3px solid #FFF;
+}
+.mplist-item:hover{
+    background-color: rgba(70, 163, 88, 0.50);
+    
+}
+.mplist-item:active{
+    border-bottom: 3px solid #46A358;
+    font-family: 'Cera Pro Bold', sans-serif;
+}
+.mpbuttonlogin{
+    display: flex;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-family: 'Cera Pro Medium';
+    border-radius: 6px;
+    background: #46A358;
+    padding: 8px 17px;
+    gap: 4px;
+}
+.mpsvglogin{
+    width: 16.278px;
+    height: 15.417px;
+    flex-shrink: 0;
+}
+.mpcontainer{
+    display: flex;
+    background: linear-gradient(98deg, rgba(245, 245, 245, 0.50) -23.46%, rgba(245, 245, 245, 0.50) 107.51%);
+    margin:12px 120px 52px;
+    justify-content: space-between;  
+}
+.mpleft{ 
+    padding: 68px 43px;
+    }
+.mpright{
+    flex-shrink: 0;
+}
+.mpbuttonshop{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    border: none;
+    background: #46A358;
+    padding: 11px 27px 9px 26px;
+    color: #FFF;
+    font-family: "Cera Pro Bold";
+    text-transform: uppercase;
+    margin-top: 44px;
+    
+}
+.mptextWelcome{
+    color: #3D3D3D;
+    font-family: 'Cera Pro Medium';
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    max-width: 100%;
+}
+.mptextLets{
+    font-family: "Cera Pro Bold";
+    font-weight: 900;
+    font-size: 70px;
+    font-style: normal;
+    line-height: 70px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    color: #3D3D3D;
+    max-width: 70%;
+}
+.mptextLetsgreen{
+    color: #46A358;
+}
+.mptextDescr{
+    flex-shrink: 0;
+    color: #727272;
+    font-family: 'Cera Pro Regular';
+    margin-top: 5px;
+    max-width: 80%;}
+.mpsub-list{
+    position: absolute;
+    padding-top: 12px;
+    min-width: 188px;
+    top: 100%;
+    left: -25%;
+    display: none;
+    z-index: 1;
+}
+.mpsub-list-item{
+    color: #3D3D3D;
+    font-family: 'Cera Pro Regular';
+    font-size: 16px;
+    line-height: normal;
+    padding: 7px 104px 8px 14px;
+    background-color: #EDF6EE;
+}
+.mpsub-list-item > a {
+    display: inline-block;
+}
+.mplist-item:hover > .mpsub-list {
+    display: block;
+}
+.mpsub-sub-list{
+    position: absolute;
+    padding-top: 12px;
+    padding-left: 2px;
+    top: 0;
+    left: 100%;
+    display: none;
+    min-width: 188px;
+}
+.mpsub-sub-list-item{
+    color: #3D3D3D;
+    font-family: 'Cera Pro Regular';
+    font-size: 16px;
+    line-height: normal;
+    padding: 7px 14px;
+    background-color: #EDF6EE;
+}
+.mpsub-sub-list-item > a {
+    display: inline-block;
+}
+.mpsub-list-item:hover{
+    background-color: #1A712A;
+    color: #fff;
+}
+.mpsub-list-item:hover > .mpsub-sub-list {
+    display: inline-block;
+    
+}
+.mpsub-sub-list-item:hover{
+    background-color: #1A712A;
+    color: #fff;
+}
