@@ -36,17 +36,17 @@
     font-style: normal;
     box-sizing: border-box;
 }
-.page{
+.blogpage{
     margin: 69px 120px;
 }
-.header{
+.blogheader{
     display: flex;
     flex-direction: row;
     
     flex-wrap: wrap;
     width: 100%;
 }
-.headerpart{
+.blogheaderpart{
     flex-direction: row;
     flex: 1;
     display: flex;
@@ -55,14 +55,14 @@
     background: #FBFBFB;
     background-clip: content-box;
 }
-.headpartright{
+.blogheadpartright{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     text-align: right;
     padding: 89px 30px;
 }
-.headtext1{
+.blogheadtext1{
     color: #3D3D3D;
     /*text-align: right;*/
     font-family: "Cera Pro Bold";
@@ -71,7 +71,7 @@
     line-height: 133.333%;
     text-transform: uppercase;
 }
-.headtext2{
+.blogheadtext2{
     color: #727272;
     /*text-align: right;*/
     font-family: "Cera Pro Regular";
@@ -79,7 +79,7 @@
     line-height: 171.429%;
     margin-top: 9px;
 }
-.img{
+.blogimg{
     width: 287px;
     height: 292px;
     flex-shrink: 0;
