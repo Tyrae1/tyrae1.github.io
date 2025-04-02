@@ -57,6 +57,13 @@ header{
     align-items: center;
     justify-content: center;
 }
+.mpbuttonlist{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    cursor: pointer;
+}
 .mplist-item{
     padding: 8px 25px 25px;
     font-family: 'Cera Pro Regular';
@@ -84,6 +91,20 @@ header{
     background: #46A358;
     padding: 8px 17px;
     gap: 4px;
+    cursor: pointer;
+}
+.mpbuttonfilter{
+    display: flex;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-family: 'Cera Pro Medium';
+    border-radius: 6px;
+    background: #46A358;
+    padding: 8px 25px;
+    gap: 4px;
+    cursor: pointer;
 }
 .mpsvglogin{
     width: 16.278px;
@@ -114,7 +135,7 @@ header{
     font-family: "Cera Pro Bold";
     text-transform: uppercase;
     margin-top: 44px;
-    
+    cursor: pointer;
 }
 .mptextWelcome{
     color: #3D3D3D;
@@ -205,7 +226,6 @@ header{
 }
 .storecolumn-left{
     background: #FBFBFB;
-    
 }
 .storecategory-list{
     padding: 14px 7px 18px;
@@ -230,10 +250,51 @@ header{
 #activecategory{
     color: #46A358;
     font-family: "Cera Pro Bold";
-
+}
+#pricerangetext{
+    color: #46A358;
+    font-family: "Cera Pro Bold";
+}
+.double-slider-box{
+    background: #FBFBFB;
+}
+.pricerange{
+    position: relative;
+    width: 209px;
+    height: 4px;
+    background: rgba(70, 163, 88, 0.20);
+}
+.pricerange input{
+    position: absolute;
+    width: 100%;
+    background: none;
+    pointer-events: none;
+    top: 50%;
+    transform: translateY(-50%);
+}
+input [type="range"]::-webkit-slider-thumb {
+    width: 15px;
+    height: 15px;
+    fill: #46A358;
+    stroke-width: 3px;
+    stroke: #FFF;
+    pointer-events: auto;
+    appearance: none;
+    cursor: pointer;
+    box-shadow: 0.125rem .5625rem -0.125rem green;
+}
+input [type="range"]::-moz-range-thumb {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: 3px solid #FFF;
+    background: #3fff;
+    pointer-events: auto;
+    cursor: pointer;
+    -moz-appearance: none;
+    box-shadow: 0.125rem .5625rem -0.125rem green;
 }
 .storesidebaner{
-    margin-top: 377px;
     height: 470px;
     background: linear-gradient(180deg, rgba(70, 163, 88, 0.10) 0%, rgba(70, 163, 88, 0.03) 100%);
     text-align: center;
@@ -401,11 +462,109 @@ header{
     background: none;
     width: 20px;
     height: 20px;
+    cursor: pointer;
+    position: relative;
+}
+.mpbucketicon{
+    position: absolute;
+    right: -20%;
+    top: 0%;
+    color: #FFF;
+    font-family: "Cera Pro Medium";
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #46A358;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 0 2px #FFF;
+}
+.range-values {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    font-family: "Cera Pro Medium";
+    color: #46A358;
+}
+.range-line {
+    display: inline-block;
+    vertical-align: top;
+}
+#value{
+    color: #46A358;
+    font-family: "Cera Pro Bold";
+}
+.input-ranges[type='range'],
+.input-ranges[type='range']::-webkit-slider-runnable-track,
+.input-ranges[type='range']::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    background: none;
+}
+.input-ranges[type='range']::-webkit-slider-runnable-track {
+    width: 161px;
+    height: 4px;
+    background-color: #46A358;
+}
+.input-ranges[type='range']:nth-child(2)::-webkit-slider-runnable-track {
+    background: none;
+}
+.input-ranges[type='range']::-webkit-slider-thumb {
+    position: relative;
+    height: 18px;
+    width: 18px;
+    margin-top: -7px;
+    background: #46A358;
+    border: 3px solid #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    z-index: 1;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+ }
+ .input-ranges[type='range']::-webkit-slider-thumb:hover {
+    background: #eaefff;
+    border: 1px solid grey;
+    outline: .5px solid yellow;
+}
+.input-ranges[type='range']::-webkit-slider-thumb:active {
+    cursor: grabbing;
+}
+.input-ranges[type='range']:nth-child(1)::-webkit-slider-thumb {
+    z-index: 2;
+}
+.rangeslider {
+    position: relative;
+    width: 209px;
+    height: 4px;
+    display: inline-block;
+    background: rgba(70, 163, 88, 0.20);
+}
+.rangeslider input {
+    position: absolute;
+}
+.rangeslider span {
+    position: absolute;
+    margin-top: 0px;
+    left: 0;
+}
+.rangeslider .right {
+    position: relative;
+    float: right;
+    margin-right: -5px;
 }
 .buybuttons:hover{
     border:#46A358;
     scale: 1.2;
     fill: #46A358;
+    .mpbucketicon{
+        background-color: #3D3D3D;
+    }
 }
 .discount{
     display: flex;
@@ -453,7 +612,6 @@ header{
 }
 .blogheadtext1{
     color: #3D3D3D;
-    /*text-align: right;*/
     font-family: "Cera Pro Bold";
     font-size: 18px;
     font-weight: 900;
@@ -462,7 +620,6 @@ header{
 }
 .blogheadtext2{
     color: #727272;
-    /*text-align: right;*/
     font-family: "Cera Pro Regular";
     font-size: 14px;
     line-height: 171.429%;
@@ -520,6 +677,7 @@ header{
     color: #FFF;
     font-family: "Cera Pro Medium";
     margin-top: 25px;
+    cursor: pointer;
 }
 .svg1{
     margin: 1px 2px;
@@ -536,6 +694,7 @@ header{
     font-family: "Cera Pro Medium";
     margin-top: 9px;
     background: #FFF;
+    cursor: pointer;
 }
 #greenbutton{
     color: #46A358;
@@ -551,7 +710,6 @@ header{
     color: #3D3D3D;
     font-size: 20px;
     line-height: 130%;
-    /*text-transform: capitalize;*/
     margin-top: 4px;
 }
 .blogtext3{
@@ -591,7 +749,6 @@ header{
     font-family: "Cera Pro Regular";
     font-size: 14px;
     line-height: 22px;
-    /*text-align: justify;*/
 }
 .footer-service-search{
     min-width: 354px;
