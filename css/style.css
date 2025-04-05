@@ -242,14 +242,9 @@ header{
 .storecategory{
     font-family: "Cera Pro Regular";
     padding: 7px 30px;
-    align-items: space between;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
-#activecategory{
-    color: #46A358;
-    font-family: "Cera Pro Bold";
 }
 #pricerangetext{
     color: #46A358;
@@ -903,3 +898,21 @@ body.preload {
     opacity: 0;
     visibility: hidden;
 }
+.custom-checkbox{
+    display: block;
+    cursor: pointer;
+}
+.custom-checkbox input[type="checkbox"] {
+    display: none;
+}
+.custom-check{
+    font-family: "Cera Pro Regular";
+    padding: 7px 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.custom-checkbox input[type="checkbox"]:checked + .custom-check {
+    color: #46A358;
+    font-family: "Cera Pro Bold";
+ }
