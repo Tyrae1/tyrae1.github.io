@@ -620,17 +620,6 @@ input [type="range"]::-moz-range-thumb {
     line-height: 171.429%;
     margin-top: 9px;
 }
-.blogimg{
-    width: 287px;
-    height: 292px;
-    flex-shrink: 0;
-    background: #FBFBFB;
-}
-.imgblog{
-    width: 268px;
-    height: 195px;
-    flex-shrink: 0;
-}
 .blogs{
     margin-top: 138px;
 }
@@ -940,3 +929,15 @@ body.preload {
         max-width: 50vw;
     }
   }
+  .blogimg{
+    min-width: 287px;
+    min-height: 292px;
+    flex-shrink: 0;
+    background: #FBFBFB;
+    
+}
+.imgblog{
+    min-width: 268px;
+    min-height: 195px;
+    flex-shrink: 0;
+}
