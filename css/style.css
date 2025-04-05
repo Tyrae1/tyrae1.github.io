@@ -917,7 +917,7 @@ body.preload {
     font-family: "Cera Pro Bold";
  }
  .mpimg {
-    width: 100%;
+    width: 33vw;
     height: auto;
     max-width: 100%;
     display: block;
@@ -925,18 +925,18 @@ body.preload {
   
   @media (max-width: 768px) {
     .mpimg {
-      max-width: 100%;
+        max-width: 50vw;
     }
   }
   
   @media (min-width: 1920px) {
     .mpimg {
-      max-width: 100%;
+      max-width: 50vw;
     }
   }
   
   @media (min-width: 2560px) {
     .mpimg {
-      max-width: 100%;
+        max-width: 50vw;
     }
   }
