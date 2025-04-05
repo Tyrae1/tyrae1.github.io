@@ -916,3 +916,7 @@ body.preload {
     color: #46A358;
     font-family: "Cera Pro Bold";
  }
+ .mpimg{
+    width: 50%;
+    height: auto;
+  }
