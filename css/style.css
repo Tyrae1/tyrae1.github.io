@@ -916,7 +916,27 @@ body.preload {
     color: #46A358;
     font-family: "Cera Pro Bold";
  }
- .mpimg{
+ .mpimg {
     width: 100%;
     height: auto;
+    max-width: 100%;
+    display: block;
+  }
+  
+  @media (max-width: 768px) {
+    .mpimg {
+      max-width: 100%;
+    }
+  }
+  
+  @media (min-width: 1920px) {
+    .mpimg {
+      max-width: 100%;
+    }
+  }
+  
+  @media (min-width: 2560px) {
+    .mpimg {
+      max-width: 100%;
+    }
   }
