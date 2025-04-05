@@ -223,6 +223,7 @@ header{
 .container-store{
     display: flex;
     background-color: #FFF;
+    justify-content: space-between;
 }
 .storecolumn-left{
     background: #FBFBFB;
@@ -358,9 +359,10 @@ input [type="range"]::-moz-range-thumb {
     display: flex;
     flex-wrap: wrap;
     max-width: 100%;
-    justify-content: space-between;
+    justify-content: flex-start;
     max-height: 100%;
     gap: 33px;
+    align-items: center;
 }
 .product{
     background: #FBFBFB;
