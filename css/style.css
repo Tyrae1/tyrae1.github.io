@@ -936,10 +936,9 @@ body.preload {
     background: #FBFBFB;
     height: auto;
     width: 20vw;
-    
 }
 .imgblog{
     width: 268px;
-    min-height: 195px;
+    height: 195px;
     flex-shrink: 0;
 }
