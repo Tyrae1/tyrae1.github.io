@@ -645,6 +645,8 @@ input [type="range"]::-moz-range-thumb {
     flex-wrap: wrap;
     margin-top: 35px;
     gap: 43px;
+    box-sizing: border-box;
+
 }
 .blog{
     max-width: 268px;
@@ -938,7 +940,14 @@ body.preload {
     width: 20vw;
 }
 .imgblog{
-    width: 268px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* або contain, якщо не хочеш обрізання */
+    display: block;
+    /*width: 268px;
     height: 195px;
     flex-shrink: 0;
+    height: auto;
+    box-sizing: border-box;
+    display: block;*/
 }
