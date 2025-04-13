@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-style: normal;
+  box-sizing: border-box;
+}
+
+.header-mobile {
+  display: none;
+}
+@media (max-width: 768px) {
+  .header-mobile {
+    display: block;
+  }
+  .header-mobile .head-logo {
+    font-size: 20px;
+  }
+}
+
+.header-desktop {
+  display: flex;
+  padding: 50px 60px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: row nowrap;
+}
+@media (max-width: 768px) {
+  .header-desktop {
+    display: none;
+  }
+}
+
+.header-mobile-nav {
+  padding: 10px 15px;
+  background-color: #F5F5FA;
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  line-height: normal;
+  color: #B3B3BA;
+}
+
+.header-lang {
+  display: flex;
+  flex-flow: row wrap;
+  font-size: 12px;
+  letter-spacing: 1px;
+  transition: 0.2s ease;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+.header-lang input[type=radio] {
+  display: none;
+}
+.header-lang label {
+  display: flex;
+  cursor: pointer;
+  padding: 5px 7px;
+}
+.header-lang input[type=radio]:checked + label {
+  background-color: #F0145A;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.header-tel {
+  font-size: 16px;
+}
+
+.head {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.head-logo {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0 10px;
+  line-height: normal;
+  color: #323264;
+  font-size: 36px;
+}
+
+.head-logo-1 {
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3.467px;
+  font-size: 20px;
+}
+
+.head-logo-2 {
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: start;
+  margin-top: 4px;
+}
+
+#desktop-logo {
+  font-size: 36px;
+}
+
+.head-menu-button {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.head-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 12px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #24A3FF;
+}
+
+.menu-exit {
+  display: flex;
+  max-width: 32px;
+  max-height: 32px;
+  background-color: none;
+  background: none;
+  border: none;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px 0;
+  background-color: #F5F5FA;
+  border-radius: 12px;
+  align-self: stretch;
+  width: 100%;
+}
+
+.head-menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  visibility: hidden;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100%, 360px);
+  padding: 12px 12px;
+  list-style: none;
+  text-align: center;
+  background-color: #fff;
+  gap: 15px;
+  z-index: 2;
+  opacity: 0;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+#activepage {
+  background-color: #E6E6F0;
+}
+
+.menu-item-exit {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #fff;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.head-menu-button > span,
+.head-menu-button > span:before,
+.head-menu-button > span:after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+}
+
+.head-menu-button > span::before {
+  content: "";
+  top: -8px;
+}
+
+.head-menu-button > span::after {
+  content: "";
+  top: 8px;
+}
+
+.menu-item:hover {
+  color: #F0145A;
+}
+
+#menu-toggle:checked ~ .head-menu-button > span {
+  transform: rotate(45deg);
+}
+
+#menu-toggle:checked ~ .head-menu-button > span ::before {
+  transform: rotate(0);
+}
+
+#menu-toggle:checked + .head-menu-button {
+  background-color: #E6E6F0;
+  border-radius: 8px;
+}
+
+#menu-toggle:checked ~ .head-menu-button > span::after {
+  transform: rotate(90deg);
+}
+
+#menu-toggle:checked ~ .head-menu-list {
+  visibility: visible;
+  opacity: 1;
+}
+
+.head-menu-button span {
+  display: none;
+}
+
+.head-description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+}/*# sourceMappingURL=style.css.map */
