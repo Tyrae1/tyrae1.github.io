@@ -12,7 +12,7 @@
 }
 @media (max-width: 768px) {
   .header-mobile {
-    display: inline-flex;
+    display: block;
   }
   .header-mobile .head-logo {
     font-size: 20px;
@@ -365,6 +365,11 @@
   gap: 28px;
   flex-flow: column wrap;
 }
+@media (min-width: 1024px) {
+  .aboutpage-1-description {
+    max-width: 70%;
+  }
+}
 
 .aboutpage-header {
   font-family: "Montserrat", sans-serif;
@@ -389,6 +394,8 @@
   line-height: normal;
   font-size: 19px;
   color: #000;
+  text-align: justify;
+  gap: 30px;
 }
 
 .aboutpage-1-table {
@@ -451,6 +458,9 @@
   align-items: center;
   justify-content: center;
   margin-top: 30px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .aboutpage-2 {
@@ -461,11 +471,101 @@
 .aboutpage-2-text {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  font-size: 46px;
+  font-size: 36px;
   line-height: normal;
   text-transform: uppercase;
-  letter-spacing: 63px;
+  letter-spacing: 13px;
   text-shadow: 0px 15px 30px rgba(40, 40, 86, 0.8);
-  text-align: center;
   color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  padding: 35px 113.5px;
+}
+@media (min-width: 769px) {
+  .aboutpage-2-text {
+    font-size: 46px;
+    letter-spacing: 63px;
+  }
+}
+
+.aboutphoto {
+  width: 100%;
+  height: auto;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.aboutpage-3 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-top: 30px;
+  gap: 30px;
+  padding: 0 30px;
+}
+@media (min-width: 768px) {
+  .aboutpage-3 {
+    padding: 0 60px;
+    flex-wrap: wrap;
+    margin-top: 60px;
+  }
+}
+@media (min-width: 1024px) {
+  .aboutpage-3 {
+    padding: 0 60px;
+    margin-top: 60px;
+    gap: 60px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
+@media (min-width: 1280px) {
+  .aboutpage-3 {
+    padding: 0 160px;
+    margin-top: 60px;
+    gap: 60px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
+@media (min-width: 1980px) {
+  .aboutpage-3 {
+    padding: 0 280px;
+    margin-top: 60px;
+    gap: 60px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
+
+.aboutpage-3-desc {
+  max-width: 100%;
+}
+@media (min-width: 1024px) {
+  .aboutpage-3-desc {
+    max-width: 70%;
+  }
+}
+
+.aboutpage-3-desc p {
+  margin-bottom: 20px;
+}
+
+.aboutpage-4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  padding: 30px 60px;
+}
+@media (min-width: 1920px) {
+  .aboutpage-4 {
+    padding: 30px 160px;
+  }
 }/*# sourceMappingURL=style.css.map */
