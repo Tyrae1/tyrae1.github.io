@@ -6,7 +6,7 @@
     font-style: normal;
     box-sizing: border-box;
 }
-$font-family: "Montserrat", sans-serif;
+$font-family: 'Montserrat', sans-serif;
 $font-bold: (
     family: $font-family,
     weight: 700
@@ -31,30 +31,52 @@ $color-grey-bg: #F5F5FA;
 $color-grey-bg-alt: #EDEDF7;
 $color-grey-text: #B3B3BA;
 $color-grey-separator: #E6E6F0;
-$gradien-regular: linear-gradient(129deg, #323264 0%, #323264 73.96%, #A54B5F 100%);
-$gradien-soft: linear-gradient(42deg, #323264 14.33%, #323264 51.39%, #7A425E 87.53%);
-$gradien-red: linear-gradient(323deg, #F0145A 6.7%, #693264 70.36%);
-$gradien-supersoft: linear-gradient(229deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%);
+$color-basic-black: #000;
+$gradient-regular: linear-gradient(129deg, #323264 0%, #323264 73.96%, #A54B5F 100%);
+$gradient-soft: linear-gradient(42deg, #323264 14.33%, #323264 51.39%, #7A425E 87.53%);
+$gradient-red: linear-gradient(323deg, #F0145A 6.7%, #693264 70.36%);
+$gradient-supersoft: linear-gradient(229deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%);
 $gradient-red-text: linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%);
+
+@mixin gradient-text($gradient) {
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; // для підтримки у Firefox
+    color: transparent; // fallback
+}
 .header-mobile{
     display: none;
     @media (max-width: 768px){
-        display: block;
+        display: inline-flex;
         .head-logo{
             font-size: 20px;
         }
     }
 }
-.header-desktop{
-    display: flex;
-    @media (max-width: 768px) {
-        display: none;
+.header-tabletSD{
+    display: none;
+    @media (min-width: 769px) and (max-width: 1023px) {
+        display: flex;
+        padding: 50px 60px 0;
+        align-items: start;
+        justify-content: flex-start;
+        flex-flow: column wrap;
+        gap: 30px;
     }
-    padding: 50px 60px 0;
+}
+.header-desktop{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
+    padding: 50px 60px 0;
+    @media (max-width: 1023px) {
+        display: none;
+    }
+    @media (min-width: 1920px) {
+        padding: 50px 160px 0;
+    }
 }
 .header-mobile-nav{
     padding: 10px 15px;
@@ -235,7 +257,163 @@ $gradient-red-text: linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%);
 }
 .head-description{
     display: flex;
+    flex-flow: column wrap;
+}
+.greyseparator{
+    fill: $color-grey-separator;
+}
+.head-contacts{
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 6px;
+}
+.head-contacts_adress{
+    color: $color-grey-text;
+    font-size: 16px;
+    @include font($font-regular);
+    line-height: normal;
+}
+.head-contacts_number{
+    color: $color-grey-text;
+    font-size: 16px;
+    @include font($font-bold);
+    line-height: normal;
+}
+.head-menu-desk{
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 16px;
+    gap: 15px;
+    @include font($font-bold);
+    line-height: normal;
+    font-size: 16px;
+    color: $color-active-regular;
+    border-bottom: 2px $color-white-basic;
+    input[type="radio"] {display: none;}
+        label{ 
+            display: flex;
+            cursor: pointer;
+            }
+        label:has(input:checked) {
+            color: $color-accent;
+            border-bottom: 2px solid $color-accent;
+            }
+}
+.aboutpage-body{
+    display: flex;
+    flex-flow: column wrap;
+}
+.aboutpage-1{
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 60px;
+    gap: 30px;
+    padding: 0 30px;
+    flex-wrap: wrap;
+    @media (min-width: 768px){
+        padding: 0 60px;
+        flex-wrap: wrap;
+    }
+    @media (min-width: 1024px){
+        padding: 0 60px;
+        flex-wrap: nowrap;
+    }
+    @media (min-width: 1280px){
+        padding: 0 160px;
+        flex-wrap: nowrap;
+    }
+    @media (min-width: 1980px){
+        padding: 0 280px;
+        flex-wrap: nowrap;
+    }
+}
+.aboutpage-1-description{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 28px;
+    flex-flow: column wrap;
+}
+.aboutpage-header{
+    @include font($font-bold);
+    line-height: normal;
+    font-size: 38px;
+    @include gradient-text($gradient-red-text);
+    @media (max-width: 768px){
+        font-size: 30px;
+    }
+}
+.aboutpage-1-text{
+    @include font($font-regular);
+    line-height: normal;
+    font-size: 19px;
+    color: $color-basic-black;
+}
+.aboutpage-1-table{
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 30px;
+    position: relative;
+}
+.aboutpage-1-table_column{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.aboutpage-1-table_column-item{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.aboutpage-1-table_column-item-head{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include font($font-bold);
+    font-size: 36px;
+    line-height: normal;
+    @include gradient-text($gradient-red-text);
+    gap: 8px;
+}
+.aboutpage-1-table_column-item-text{
+    display: flex;
     flex-flow: row wrap;
+    @include font($font-regular);
+    font-size: 16px;
+    line-height: normal;
+    color: $color-main-regular;
+}
+.greysep{
+    width: 4px;
+    background-color: $color-grey-separator;
+    border-radius: 2px;
+    flex-shrink: none;
+}
+.aboutpage-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    @media (min-width: 768px){
+        margin-top: 60px;}
+}
+.aboutpage-2-text{
+    @include font($font-bold);
+    font-size: 46px;
+    line-height: normal;
+    text-transform: uppercase;
+    letter-spacing: 63px;
+    text-shadow: 0px 15px 30px rgba(40, 40, 86, 0.80);
+    text-align: center;
+    color: $color-white-basic;
+}
+.aboutphoto{
+
 }
