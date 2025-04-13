@@ -62,11 +62,12 @@
   display: flex;
   cursor: pointer;
   padding: 5px 7px;
+  border-radius: 8px;
+  transition: 0.2s ease;
 }
-.header-lang input[type=radio]:checked + label {
+.header-lang label:has(input:checked) {
   background-color: #F0145A;
   color: #fff;
-  border-radius: 8px;
 }
 
 .header-tel {
