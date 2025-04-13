@@ -488,9 +488,34 @@ $gradient-red-text: linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%);
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     margin-top: 60px;
     padding: 30px 60px;
     @media (min-width: 1920px){
         padding: 30px 160px;
     }
+}
+.aboutpage-4-header{
+    color: $color-main-regular;
+    @include font($font-bold);
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: normal;
+}
+.aboutpage-4-partners{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin: 30px 0;
+}
+.aboutpage-4-partner{
+    display: flexbox;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 0;
+    border-radius: 12px;
+    background-color: $color-white-basic;
+    min-height: 110px;
 }
