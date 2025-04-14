@@ -12,7 +12,8 @@
 }
 @media (max-width: 768px) {
   .header-mobile {
-    display: block;
+    display: flex;
+    flex-flow: column wrap;
   }
   .header-mobile .head-logo {
     font-size: 20px;
@@ -327,16 +328,15 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  flex-direction: row;
+  flex-flow: row wrap;
   margin-top: 60px;
   gap: 30px;
   padding: 0 30px;
-  flex-wrap: wrap;
 }
 @media (min-width: 768px) {
   .aboutpage-1 {
     padding: 0 60px;
-    flex-wrap: wrap;
+    flex-flow: column wrap;
   }
 }
 @media (min-width: 1024px) {
