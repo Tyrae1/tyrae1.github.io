@@ -306,30 +306,31 @@ $gradient-red-text: linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%);
 .aboutpage-body{
     display: flex;
     flex-flow: column wrap;
+    max-width: 100%;
 }
 .aboutpage-1{
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
+    max-width: 100%;
     margin-top: 60px;
     gap: 30px;
     padding: 0 30px;
     @media (min-width: 768px){
         padding: 0 60px;
-        flex-flow: column wrap;
     }
     @media (min-width: 1024px){
         padding: 0 60px;
-        flex-wrap: nowrap;
+        flex-flow: row nowrap;
     }
     @media (min-width: 1280px){
         padding: 0 160px;
-        flex-wrap: nowrap;
+        flex-flow: row nowrap;
     }
     @media (min-width: 1980px){
         padding: 0 280px;
-        flex-wrap: nowrap;
+        flex-flow: row nowrap;
     }
 }
 .aboutpage-1-description{
@@ -338,10 +339,10 @@ $gradient-red-text: linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%);
     justify-content: center;
     gap: 28px;
     flex-flow: column wrap;
+    max-width: 100%;
     @media (min-width: 1024px) {
-        max-width: 70%
+        max-width: 65%
     }
-    
 }
 .aboutpage-header{
     @include font($font-bold);
@@ -448,6 +449,7 @@ $gradient-red-text: linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%);
     margin-top: 30px;
     gap: 30px;
     padding: 0 30px;
+    max-width: 100%;
     @media (min-width: 768px){
         padding: 0 60px;
         flex-wrap: wrap;
@@ -479,7 +481,7 @@ $gradient-red-text: linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%);
 .aboutpage-3-desc{
     max-width: 100%;
     @media (min-width: 1024px) {
-        max-width: 70%
+        max-width: 65%
     }
 }
 .aboutpage-3-desc p {
@@ -492,6 +494,7 @@ $gradient-red-text: linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%);
     flex-direction: column;
     margin-top: 60px;
     padding: 30px 60px;
+    max-width: 100%;
     @media (min-width: 1920px){
         padding: 30px 160px;
     }
@@ -508,8 +511,10 @@ $gradient-red-text: linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%);
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-flow: row wrap;
     gap: 40px;
     margin: 30px 0;
+    max-width: 100%;
 }
 .aboutpage-4-partner{
     display: flexbox;
