@@ -306,7 +306,7 @@ $gradient-red-text: linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%);
     flex-flow: column wrap;
 }
 .aboutpage-1{
-    display: inline-flex;
+    display: flex;
     align-items: flex-start;
     justify-content: space-between;
     flex-direction: row;

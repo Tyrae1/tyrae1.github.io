@@ -324,7 +324,7 @@
 }
 
 .aboutpage-1 {
-  display: inline-flex;
+  display: flex;
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: row;
