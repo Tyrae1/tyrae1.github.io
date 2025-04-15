@@ -320,39 +320,35 @@
     </section>
     <section class="aboutpage-4">
       <p class="aboutpage-4__header">achievements</p>
-      <input type="radio" name="partner-slider" id="partner-slide-1" checked>
-      <input type="radio" name="partner-slider" id="partner-slide-2">
-      <input type="radio" name="partner-slider" id="partner-slide-3">
-      <input type="radio" name="partner-slider" id="partner-slide-4">
-      <ul class="aboutpage-4__partners">
-        <li class="aboutpage-4__partner_1"><img src="./src/img/partner1.png" alt="partner №1"></li>
-        <li class="aboutpage-4__partner_2"><img src="./src/img/partner2.png" alt="partner №2"></li>
-        <li class="aboutpage-4__partner_3"><img src="./src/img/partner3.png" alt="partner №3"></li>
-        <li class="aboutpage-4__partner_4"><img src="./src/img/partner4.png" alt="partner №4"></li>
-      </ul>
       <div class="aboutpage-4__menu">
-        <label for="partner-slider-1"></label>
-        <label for="partner-slider-2"></label>
-        <label for="partner-slider-3"></label>
-        <label for="partner-slider-4"></label>
-        <!--<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <circle cx="8" cy="8" r="8" fill="#24A3FF"/>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <circle opacity="0.2" cx="8" cy="8" r="8" fill="#24A3FF"/>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <circle opacity="0.2" cx="8" cy="8" r="8" fill="#24A3FF"/>
-        </svg>-->
+        <input type="radio" name="slider" id="partner-1" checked>
+        <input type="radio" name="slider" id="partner-2">
+        <input type="radio" name="slider" id="partner-3">
+        <input type="radio" name="slider" id="partner-4">
+      
+      <div class="aboutpage-4__partners">
+        <label for="partner-1" class="aboutpage-4__partner"><img src="./src/img/partner1.png" alt="partner №1"></label>
+        <label for="partner-2" class="aboutpage-4__partner"><img src="./src/img/partner2.png" alt="partner №2"></label>
+        <label for="partner-3" class="aboutpage-4__partner"><img src="./src/img/partner3.png" alt="partner №3"></label>
+        <label for="partner-4" class="aboutpage-4__partner"><img src="./src/img/partner4.png" alt="partner №4"></label>
       </div>
+      
+      <div class="partner-slider-1">
+        <label for="partner-1" class="dot"></label>
+        <label for="partner-2" class="dot"></label>
+        <label for="partner-3" class="dot"></label>
+        <label for="partner-4" class="dot"></label>
+      </div>
+    </div>
     </section>
   </div>
-  <footer class="aboutpage__footer_mob">
-    <section class="aboutpage__footer_mob-top">
-      <p class="aboutpage__footer_mob-top-1">Kyiv, Mechnikova str., 14/1</p>
-      <p class="aboutpage__footer_mob-top-2">On map</p>
+  <footer class="footer_mob">
+    <div class="footer__separator"></div>
+    <section class="footer_mob-top">
+      <p class="footer_mob-top-1">Kyiv, Mechnikova str., 14/1</p>
+      <p class="footer_mob-top-2">On map</p>
     </section>
-    <section class="aboutpage__footer_mob-center">
+    <section class="footer_mob-center">
       <p><svg xmlns="http://www.w3.org/2000/svg" width="39" height="39" viewBox="0 0 39 39" fill="none">
         <g clip-path="url(#clip0_169584_1446)">
           <path d="M38.5 19.1786C38.5 8.62107 29.9934 0.0625 19.5 0.0625C9.00658 0.0625 0.5 8.62107 0.5 19.1786C0.5 28.72 7.44803 36.6284 16.5312 38.0625V24.7044H11.707V19.1786H16.5312V14.9671C16.5312 10.1761 19.3678 7.52973 23.7078 7.52973C25.7866 7.52973 27.9609 7.90309 27.9609 7.90309V12.6075H25.5651C23.2048 12.6075 22.4688 14.081 22.4688 15.5927V19.1786H27.7383L26.8959 24.7044H22.4688V38.0625C31.552 36.6284 38.5 28.72 38.5 19.1786Z" fill="#24A3FF"/>
@@ -364,23 +360,24 @@
         </defs>
       </svg>
       </p>
-      <p class="aboutpage__footer_mob-center-1">0800 211 927</p>
-      <p class="aboutpage__footer_mob-center-2">contact@forstudy.space</p>
+      <p class="footer_mob-center-1">0800 211 927</p>
+      <p class="footer_mob-center-2">contact@forstudy.space</p>
     </section>
-    <section class="aboutpage__footer_mob-bottom">
+    <section class="footer_mob-bottom">
       <p>© 2021 HLEGAL Law company, LLC</p>
     </section>
   </footer>
-  <footer class="aboutpage__footer_tablet">
-    <section class="aboutpage__footer_tablet-top">
-      <section class="aboutpage__footer_tablet-top-1">
-      <p class="aboutpage__footer_mob-top-1">Kyiv, Mechnikova str., 14/1</p>
+  <footer class="footer_tablet">
+    <div class="footer__separator"></div>
+    <section class="footer_tablet-top">
+      <section class="footer_tablet-top-1">
+      <p class="footer_mob-top-1">Kyiv, Mechnikova str., 14/1</p>
       <svg xmlns="http://www.w3.org/2000/svg" width="6" height="7" viewBox="0 0 6 7" fill="none">
         <circle cx="3" cy="3.6001" r="3" fill="#B3B3BA"/>
       </svg>
-      <p class="aboutpage__footer_mob-top-2">On map</p>
+      <p class="footer_mob-top-2">On map</p>
     </section>
-    <section class="aboutpage__footer_tablet-top-2">
+    <section class="footer_tablet-top-2">
       <p><svg xmlns="http://www.w3.org/2000/svg" width="39" height="39" viewBox="0 0 39 39" fill="none">
         <g clip-path="url(#clip0_169584_1446)">
           <path d="M38.5 19.1786C38.5 8.62107 29.9934 0.0625 19.5 0.0625C9.00658 0.0625 0.5 8.62107 0.5 19.1786C0.5 28.72 7.44803 36.6284 16.5312 38.0625V24.7044H11.707V19.1786H16.5312V14.9671C16.5312 10.1761 19.3678 7.52973 23.7078 7.52973C25.7866 7.52973 27.9609 7.90309 27.9609 7.90309V12.6075H25.5651C23.2048 12.6075 22.4688 14.081 22.4688 15.5927V19.1786H27.7383L26.8959 24.7044H22.4688V38.0625C31.552 36.6284 38.5 28.72 38.5 19.1786Z" fill="#24A3FF"/>
@@ -395,14 +392,14 @@
       <svg xmlns="http://www.w3.org/2000/svg" width="6" height="7" viewBox="0 0 6 7" fill="none">
         <circle cx="3" cy="3.6001" r="3" fill="#B3B3BA"/>
       </svg>
-      <p class="aboutpage__footer_mob-center-1">0800 211 927</p>
+      <p class="footer_mob-center-1">0800 211 927</p>
       <svg xmlns="http://www.w3.org/2000/svg" width="6" height="7" viewBox="0 0 6 7" fill="none">
         <circle cx="3" cy="3.6001" r="3" fill="#B3B3BA"/>
       </svg>
-      <p class="aboutpage__footer_mob-center-2">contact@forstudy.space</p>
+      <p class="footer_mob-center-2">contact@forstudy.space</p>
     </section>
   </section>
-    <section class="aboutpage__footer_mob-bottom">
+    <section class="footer_mob-bottom">
       <p>© 2021 HLEGAL Law company, LLC</p>
     </section>
   </footer>
