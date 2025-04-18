@@ -38,13 +38,14 @@ $gradient-soft: linear-gradient(42deg, #323264 14.33%, #323264 51.39%, #7A425E 8
 $gradient-red: linear-gradient(323deg, #F0145A 6.7%, #693264 70.36%);
 $gradient-supersoft: linear-gradient(229deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%);
 $gradient-red-text: linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%);
+$gradient-red-text-reversed: linear-gradient(90deg, #EF8080 0.84%, #F0145A 99.96%);
 
 @mixin gradient-text($gradient) {
     background: $gradient;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text; // для підтримки у Firefox
-    color: transparent; // fallback
+    background-clip: text;
+    color: transparent;
 }
 .header-mobile{
     display: none;
@@ -103,9 +104,8 @@ $gradient-red-text: linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%);
 }
 .header__desktop{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-flow: row wrap;
+
+    flex-flow: column wrap;
     padding: 50px 60px 0;
     @media (max-width: 1023px) {
         display: none;
@@ -113,6 +113,12 @@ $gradient-red-text: linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%);
     @media (min-width: 1920px) {
         padding: 50px 160px 0;
     }
+}
+.header__desktop-1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row wrap;
 }
 .header-mobile-nav{
     padding: 10px 15px;
@@ -831,17 +837,11 @@ $gradient-red-text: linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%);
     margin-bottom: 30px;
     border-radius: 2px;
 }
-.body__main{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
 footer{
     z-index: 1;
     position: relative;
 }
-.body__main_1-symbol{
+.header__h-symbol{
     position: absolute;
     top: 0;
     left: 0;
@@ -851,7 +851,7 @@ footer{
     pointer-events: none;
     overflow: hidden;
   }
- .body__main_1-symbol svg{
+ .header__h-symbol svg{
     width: 100%;
     height: auto;
     display: block;
@@ -872,17 +872,10 @@ footer{
         max-width: 872px;
     }
  }
- body{
+ .index__body{
     background-color: $color-main-regular;
  }
- .body__main_1{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-flow: column wrap;
-    padding: 0 60px;
- }
- .body__main_1-text{
+ .header__h-text{
     color: $color-white-basic;
     @include font($font-bold);
     font-size: 38px;
@@ -896,7 +889,7 @@ footer{
     z-index: 1;
     position: relative;
  }
- .body__main_1-button{
+ .header__h-button{
     background: none;
     border: none;
     margin-top: 159px;
@@ -906,7 +899,7 @@ footer{
     z-index: 1;
     position: relative;
  }
- .body__main_1-button:hover{
+ .header__h-button:hover{
     color: $color-accent;
  }
 .header__h{
@@ -914,4 +907,60 @@ footer{
     justify-self: center;
     align-self: center;
     flex-flow: column nowrap;
+}
+html, body {
+    overflow-x: hidden;
+}
+.body__main_1{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    padding: 0 30px;
+    gap: 30px;
+    @media (min-width: 768px){
+        padding: 0 60px;
+    }
+    @media (min-width: 1281px){
+        padding: 0 180px;
+    }
+    @media (min-width: 1920px){
+        padding: 0 280px;
+    }
+ }
+ .body__main_1-menu-wrapper {
+    overflow-x: auto;
+    width: 100%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+.body__main_1-menu{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: max-content;
+    gap: 30px;
+    @include font($font-bold);
+    white-space: nowrap;
+    line-height: normal;
+    font-size: 30px;
+    color: $color-grey-text;
+    input[type="radio"] {display: none;}
+        label{ 
+            display: flex;
+            cursor: pointer;
+            }
+        label:has(input:checked) {
+            @include gradient-text($gradient-red-text-reversed);
+            }
+    position: relative;
+    z-index: 1;
+    @media (min-width: 1280px){
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
