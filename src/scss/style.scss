@@ -1333,7 +1333,7 @@ html, body {
     display: flex;
     justify-content: flex-start;
     align-items: stretch;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     background-color: $color-white-basic;
     @media (min-width: 1024px){
         max-width: 30%;
@@ -1379,7 +1379,7 @@ html, body {
 }
 #publication-1{
     @media (min-width: 769px) and (max-width: 1023px){
-        max-width: 310px;
+        max-width: 45%;
         height: 515px;
     }
 }
