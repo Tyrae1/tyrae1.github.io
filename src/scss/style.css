@@ -1251,13 +1251,23 @@ html, body {
   display: flex;
   justify-self: center;
   align-self: center;
+  background: #323264;
+  border-radius: 0 0 12px 12px;
+  height: 10px;
+  width: 100%;
+}
+
+.body__main_2-border2 {
+  display: flex;
+  justify-self: center;
+  align-self: center;
   background: #CACADB;
   border-radius: 0 0 12px 12px;
   height: 10px;
   width: 95%;
 }
 
-.body__main_2-border2 {
+.body__main_2-border3 {
   display: flex;
   justify-self: center;
   align-self: center;
@@ -1265,4 +1275,302 @@ html, body {
   border-radius: 0 0 12px 12px;
   height: 10px;
   width: 85%;
+}
+
+.body__main_2-bot-border {
+  background-color: #fff;
+}
+
+.body__main_3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  padding: 30px 30px 0;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.body__main_3-photo {
+  border-radius: 12px 12px 0px 0px;
+  align-self: stretch;
+  height: 500px;
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.body__main_3-description {
+  background-color: #F5F5FA;
+  overflow: hidden;
+  padding: 30px 15px 0;
+  gap: 30px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+}
+
+.body__main_3-description-1 {
+  display: flex;
+  align-items: start;
+  justify-content: flex-start;
+  flex-flow: column wrap;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.body__main_3-description-1-text-1 {
+  font-size: 14px;
+  color: #24A3FF;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: start;
+}
+
+.body__main_3-description-1-text-2 {
+  background: linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-size: 30px;
+}
+
+.body__main_3-description-2 {
+  display: flex;
+  gap: 6px;
+  color: #B3B3BA;
+  flex-flow: column nowrap;
+  padding-bottom: 30px;
+}
+
+.body__main_3-description-2-text-1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: normal;
+}
+
+.body__main_3-description-2-text-2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.body__main_3-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 30px 0 60px;
+}
+
+.body__main_4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  background-color: #fff;
+}
+
+.body__main_4-header {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #323264;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.body__main_4-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  max-width: 100vw;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.body__main_4-menu-client {
+  display: none;
+}
+.body__main_4-menu-client:nth-child(-n+6) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  background-color: #F5F5FA;
+  width: 375px;
+  padding: 36px 80px;
+}
+
+.body__main_4-menu-client img {
+  max-height: 100%;
+  max-width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#client_hillel {
+  background: #1C4280;
+}
+
+#WannaBiz {
+  background: #143646;
+}
+
+#tapgerine {
+  background: #F48B30;
+}
+
+#client_3dlook {
+  background: #9E4DC3;
+}
+
+#orangegear {
+  background: #FD9339;
+}
+
+#adtelligent {
+  background: #E2E2E4;
+}
+
+#clickky {
+  background: #C71C36;
+}
+
+#eco_leasing {
+  background: #DCF3F9;
+}
+
+#InfraTek {
+  background: #EAEAEA;
+}
+
+#city_park {
+  background: #282240;
+}
+
+#artprintstudio {
+  background: #1D4568;
+}
+
+#ultimatecard {
+  background: #000;
+}
+
+.body__main_5 {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-flow: column wrap;
+  background-color: #F5F5FA;
+  padding: 30px 30px 0;
+  gap: 30px;
+}
+
+.body__main_5-header {
+  display: flex;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  justify-content: flex-start;
+  align-items: start;
+  line-height: normal;
+  flex-flow: column wrap;
+}
+
+.body__main_5-header-1 {
+  display: flex;
+  align-items: center;
+  color: #24A3FF;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.body__main_5-header-2 {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-size: 30px;
+}
+
+.body__main_5 img {
+  border-radius: 8px 8px 0px 0px;
+  align-self: stretch;
+  height: 200px;
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.body__main_5-publications {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+  flex-flow: row wrap;
+}
+
+.body__main_5-publication {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  background-color: #fff;
+}
+
+.body__main_5-publications-desc {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 15px;
+  flex-flow: column wrap;
+  padding: 30px 30px;
+}
+
+.body__main_5-publications-desc-header {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #24A3FF;
+  line-height: normal;
+  font-size: 16px;
+}
+
+.body__main_5-publications-desc-date {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #B3B3BA;
+  line-height: normal;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.body__main_5-publications-desc-separator {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 4px;
+  background-color: #E6E6F0;
+  border-radius: 2px;
+}
+
+.body__main_5-publications-desc-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #000;
+  line-height: 22px;
+  font-size: 14px;
 }/*# sourceMappingURL=style.css.map */
