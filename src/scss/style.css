@@ -1549,7 +1549,7 @@ html, body {
 .body__main_4-menu {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   list-style: none;
   padding: 0;
@@ -1795,4 +1795,132 @@ html, body {
     max-width: 45%;
     height: 515px;
   }
+}
+
+.teampage__body {
+  display: flex;
+  padding: 30px 30px 60px;
+  gap: 30px;
+  flex-flow: column wrap;
+}
+@media (min-width: 768px) and (max-width: 1919px) {
+  .teampage__body {
+    padding: 30px 60px 60px;
+  }
+}
+@media (min-width: 1920px) {
+  .teampage__body {
+    padding: 30px 160px 60px;
+  }
+}
+
+.teampage__body_header {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  background: linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-size: 30px;
+  line-height: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 1024px) and (max-width: 1919px) {
+  .teampage__body_header {
+    padding: 0 120px;
+  }
+}
+@media (min-width: 1920px) {
+  .teampage__body_header {
+    padding: 0 120px;
+  }
+}
+
+.teampage__body_team {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+}
+@media (min-width: 820px) {
+  .teampage__body_team {
+    gap: 60px;
+  }
+}
+
+.teampage__body_teammate {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.teampage__body_teammate-button {
+  transition: transform 0.3s ease;
+}
+@media (min-width: 768px) {
+  .teampage__body_teammate-button {
+    transform: rotate(90deg);
+  }
+}
+
+.teampage__body_teammate-description {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.teampage__body_teammate-photo {
+  align-self: stretch;
+  border-radius: 12px;
+  height: auto;
+  max-height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 80vw;
+}
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .teampage__body_teammate-photo {
+    max-height: 400px;
+    max-width: 25vw;
+  }
+}
+@media (min-width: 1367px) and (max-width: 1920px) {
+  .teampage__body_teammate-photo {
+    max-height: 400px;
+    width: auto;
+  }
+}
+@media (min-width: 1921x) {
+  .teampage__body_teammate-photo {
+    min-height: 400px;
+    width: 25vw;
+  }
+}
+
+.teampage__body_teammate-description-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.teampage__body_teammate-description-1 {
+  color: #323264;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: normal;
+}
+
+.teampage__body_teammate-description-2 {
+  color: #B3B3BA;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
 }/*# sourceMappingURL=style.css.map */
