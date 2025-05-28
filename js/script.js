@@ -1,3 +1,4 @@
+'use strict';
 const userName = `Ivan`;
 let userAge = 28;
 let userVerification = true;
