@@ -9,8 +9,9 @@ let user = {
     }
 }
 const firstFriendName = user.friends[0];
+const notificationsEnabled = user.settings.notifications;
 console.log(user.name);
 console.log(user.friends.length);
 console.log(firstFriendName);
 console.log(user.settings.theme);
-console.log(user.settings.notifications);
+console.log(notificationsEnabled);
