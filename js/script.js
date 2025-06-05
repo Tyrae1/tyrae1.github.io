@@ -1,3 +1,4 @@
+'use strict';
 let num1 = +prompt("Write a first number!");
 let num2 = +prompt("Write a second number!");
 let num3 = +prompt("Write a third number!");
