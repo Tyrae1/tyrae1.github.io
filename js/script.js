@@ -1,13 +1,13 @@
 'use strict';
-let birthYear = +prompt('Enter year birthday year!');
+const birthYear = +prompt('Enter year birthday year!');
 if (birthYear === null) {
     alert(`Sorry, but you are not entered your birthday year!`);
 } else {
-    let city = prompt('Enter city where are you living!');
+    const city = prompt('Enter city where are you living!');
     if (city === null) {
         alert(`Sorry, but you are not entered your city!`);
     } else {
-        let sport = prompt('Enter your favorite sport!');
+        const sport = prompt('Enter your favorite sport!');
         if (sport === null) {
             alert(`Sorry, but you are not entered your sport`);
         } else {
