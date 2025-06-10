@@ -10,7 +10,7 @@ alert(resultSecond);
 
 let resultThird = ' ';
 for (let i=1; i<=10; i++){
-    resultThird += `7 * ${i} = ${7 * i}`+';  ';
+    resultThird += `7 * ${i} = ${7 * i}`+';  \n';
 }
 alert(resultThird);
 
