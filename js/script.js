@@ -7,11 +7,8 @@
          console.log(`Your array ${arr} is empty`);
      } else {
          for (let i = 0; i < arr.length; i++) {
-             if (arr[i] < 0) {
-                 continue;
-             } else {
-                 exampleArr.push(arr[i]);
-             }
+             if (arr[i] < 0) continue;
+             exampleArr.push(arr[i]);
          }
      }
      return exampleArr;
