@@ -16,3 +16,42 @@ console.log(task1Array);
 task1function(task1Array);
 console.log(task1function(task1Array));
 // 2 Task
+const x = +prompt("Enter X value!");
+const y = +prompt("Enter Y value!");
+const znak = prompt("Enter math operation symbol between '+', '-', '*', '/','%' or '^'!");
+const doMath = (x, znak, y) => {
+    let result = '';
+    if (isNaN(x) || isNaN(y)) {
+        alert (`You entered wrong values!`);
+        console.log(`Task 2. Entered wrang values!`);
+        return;
+    } else {
+        switch(znak){
+            case `+`:
+                result = x + y;
+                break;
+                case '-':
+                    result = x - y;
+                    break;
+                    case `*`:
+                        result = x*y;
+                        break;
+                        case `/`:
+                            result = x/y;
+                            break;
+                            case `%`:
+                                result = x%y;
+                                break;
+                                case `^`:
+                                    result = x**y;
+                                    break;
+                                    default:
+                                        result = `Wrang znak!`
+        }
+    }
+    return result;
+}
+console.log(`Your x: ${x}, your y:${y} and your znak: ${znak}!`);
+doMath(x,znak,y);
+console.log(`${x} ${znak} ${y} = ${doMath(x,znak,y)}`);
+// 3 Task
