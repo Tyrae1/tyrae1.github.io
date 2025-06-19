@@ -76,3 +76,12 @@ const task3Array = (mainArrLength, secArrLength) => {
 console.log(`Task 3: ${task3Array(mainArrLength,secArrLength)}`);
 console.table(task3Array(mainArrLength,secArrLength));
 // Task 4
+const task4Text = prompt(`Enter text line!`);
+const task4SymDel1 = prompt(`Enter wich first symbol you want to delete?`);
+const task4SymDel2 = prompt(`Enter wich second symbol you want to delete?`);
+console.log(`Your text is: ${task4Text}. You want to delete ${task4SymDel1} and ${task4SymDel2} symbols!`);
+const task4 = (task4Text, task4SymDel1, task4SymDel2) =>{
+    
+}
+task4(task4Text, task4SymDel1, task4SymDel2);
+console.log(`Your text now is: ${task4Text}.`);
