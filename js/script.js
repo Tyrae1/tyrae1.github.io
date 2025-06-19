@@ -55,3 +55,24 @@ console.log(`Your x: ${x}, your y:${y} and your znak: ${znak}!`);
 doMath(x,znak,y);
 console.log(`${x} ${znak} ${y} = ${doMath(x,znak,y)}`);
 // 3 Task
+const mainArrLength = +prompt("Enter lenght of outer array!");
+const secArrLength = +prompt("Enter lenght of second array!");
+const task3Array = (mainArrLength, secArrLength) => {
+    if (isNaN(mainArrLength)|| isNaN(secArrLength)) {
+        alert(`You entered wrong lenght!`);
+        return null;
+    } else {
+    let result = [];
+    for (let i = 0; i < mainArrLength; i++){
+        const secArr = [];
+        for (let j = 0; j < secArrLength; j++){
+            secArr[j] = prompt (`Enter array element for [${i}] [${j}]!`);
+        }
+        result.push(secArr);
+    }
+    return result;
+    }
+};
+console.log(`Task 3: ${task3Array(mainArrLength,secArrLength)}`);
+console.table(task3Array(mainArrLength,secArrLength));
+// Task 4
