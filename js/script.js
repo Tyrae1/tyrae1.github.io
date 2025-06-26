@@ -64,5 +64,5 @@ const newArr = (users) => {
     };
 }
 
-const Test = newArr(users);
-console.log(Test);
+const Test1 = newArr(users);
+console.log(Test1);
