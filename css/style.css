@@ -4,3 +4,27 @@
     padding: 0;
     //hello
 }
+button {
+    margin-top: 100px;
+    margin-left: 100px;
+    display: block;
+    width: 320px;
+    height: 320px;
+    background-color: #b82e2e;
+    padding: 10px  10px;
+    color: black;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+button:hover {
+    letter-spacing: 3px;
+}
+button:active {
+    background-color: blue;
+    color: white;
+}
