@@ -20,11 +20,18 @@ button {
     line-height: normal;
     letter-spacing: 1px;
     font-size: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 button:hover {
     letter-spacing: 3px;
 }
-button:active {
-    background-color: blue;
+button.active {
+    background-color: black;
     color: white;
+}
+.dark-theme{
+    background-color: #413C58;
+}
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
