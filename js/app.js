@@ -21,12 +21,11 @@ function createUserInterface() {
             return acc;
         }, {});
 
-
-        target.reset()
-
-        dataBase.setData(data)
-
-        console.log(dataBase.getData())
+        target.reset();
+        disabledHandler();
+        dataBase.setData(data);
+        contactRender();
+        console.log(dataBase.getData());
     });
 
     const disabledHandler = (e) => {
@@ -49,4 +48,30 @@ function createUserInterface() {
     form.addEventListener('input', disabledHandler)
 }
 
+//Function that renders contact list
+function contactRender() {
+    const list = document.getElementById('contactList');
+    list.innerHTML = '';
+    const contacts = dataBase.getData();
+    contacts.forEach(({firstName, lastName, id}) => {
+        const li = document.createElement('li');
+        li.className = `list-group-item d-flex align-items-center justify-content-between`;
+        li.innerHTML = `
+        <div class="text-black"><b>${firstName} ${lastName}</b></div>
+            <button class="btn btn-danger btn-sm" data-id="${id}">Delete</button>
+        `;
+        list.appendChild(li);
+    });
+}
+// Delete button
+document.getElementById('contactList').addEventListener('click', (e) => {
+    if(e.target.tagName === 'BUTTON'){
+        const id = +e.target.dataset.id;
+        if(!isNaN(id)) {
+            dataBase.deleteData({id});
+            contactRender();
+        }
+    }
+});
 createUserInterface()
+contactRender();

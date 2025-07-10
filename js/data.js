@@ -2,7 +2,14 @@
 
 function createDataBase() {
     const OBJECT_KEYS = ['firstName', 'lastName', 'phone'];
-    const DB = [];
+    const DB = loadFromLocalStorage();
+    function saveToLocalStorage() {
+        localStorage.setItem('contacts', JSON.stringify(DB));
+    }
+    function loadFromLocalStorage() {
+        const data = localStorage.getItem('contacts');
+        return data ? JSON.parse(data) : [];
+    }
 
     const validateObject = (objectToValidate) => {
         if(typeof objectToValidate !== 'object') return false;
@@ -42,7 +49,7 @@ function createDataBase() {
         // Save data to database;
         const dataToSave = {...data, id};
         DB.push(dataToSave);
-
+        saveToLocalStorage();
         // return saved element
         return DB.at(-1);
     }
@@ -52,7 +59,9 @@ function createDataBase() {
 
         const userIndex = currentData.findIndex((singleUser) => id === singleUser.id );
 
-        return DB.splice(userIndex, 1)[0];
+        const deleted = DB.splice(userIndex, 1)[0];
+        saveToLocalStorage();
+        return deleted;
     }
 
 
