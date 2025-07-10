@@ -52,7 +52,11 @@ function createUserInterface() {
 function contactRender() {
     const list = document.getElementById('contactList');
     list.innerHTML = '';
-    const contacts = dataBase.getData();
+    const searchInput = document.getElementById('searchInput')?.value.trim().toLowerCase() || '';
+    const contacts = dataBase.getData().filter(({firstName, lastName}) => {
+        const fullName = `${firstName} ${lastName}`.toLowerCase();
+        return fullName.includes(searchInput);
+    });
     contacts.forEach(({firstName, lastName, id}) => {
         const li = document.createElement('li');
         li.className = `list-group-item d-flex align-items-center justify-content-between`;
@@ -73,5 +77,10 @@ document.getElementById('contactList').addEventListener('click', (e) => {
         }
     }
 });
+// Search listener
+document.getElementById('searchInput').addEventListener('input', () => {
+    contactRender();
+});
+
 createUserInterface()
 contactRender();
