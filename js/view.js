@@ -62,16 +62,20 @@ function contactRender() {
         li.className = `list-group-item d-flex align-items-center justify-content-between`;
         li.innerHTML = `
         <div class="text-black"><b>${firstName} ${lastName}</b></div>
-            <button class="btn btn-danger btn-sm" data-id="${id}">Delete</button>
+            <div class="d-flex align-content-end-center gap-1">
+            <button class="btn btn-success btn-sm"><i class="bi bi-telephone"></i></button>
+            <button class="btn btn-danger btn-sm" data-id="${id}"><i class="bi bi-trash"></i></button>
         `;
         list.appendChild(li);
     });
 }
 // Delete button
 document.getElementById('contactList').addEventListener('click', (e) => {
-    if(e.target.tagName === 'BUTTON'){
-        const id = +e.target.dataset.id;
-        if(!isNaN(id)) {
+    const button = e.target.closest('button');
+    if (!button) return;
+    if (button.classList.contains('btn-danger')) {
+        const id = +button.dataset.id;
+        if (!isNaN(id)) {
             dataBase.deleteData({id});
             contactRender();
         }
