@@ -9,21 +9,26 @@
 <body>
 <div class="container">
     <div class="col-4">
-        <div class="mb-2">
-            <label for="searchInput" class="form-label">Filter by name:</label>
-            <input name="search" type="text" class="form-control" id="searchInput" placeholder="Filter by name">
-        </div>
         <h2>Products in the store:</h2>
+        <a href="create.html" class="btn btn-primary">Create Product</a>
         <hr>
-        <ul class="list-group" id="productList">
-            <li class="list-group-item d-flex align-items-center justify-content-between">
+        <table class="table" id="productTable">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+            </thead>
+            <tbody>
 
-            </li>
-        </ul>
+            </tbody>
+        </table>
     </div>
 </div>
-<script src="./js/controller.js"></script>
 <script src="./js/model.js"></script>
 <script src="./js/view.js"></script>
+<script src="./js/controller-list.js"></script>
 </body>
 </html>

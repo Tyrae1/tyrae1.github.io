@@ -1,6 +1,7 @@
 'use strict';
 //DOM initialization:
 document.addEventListener('DOMContentLoaded', () => {
+    const page = window.location.pathname;
     const form = document.querySelector('[data-form]');
     const submitBtn = form.querySelector('[type="submit"]');
     formValidation(form, submitBtn);
