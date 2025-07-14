@@ -21,7 +21,7 @@ function updateProduct(updatedProduct) {
     saveProducts(products);
 }
 function setSelectedProductID(id) {
-    localStorage.setItem(STORAGE_KEY_PRODUCTS, id);
+    localStorage.setItem(STORAGE_KEY_SELECTED_ID, id);
 }
 function getSelectedProductID() {
     return localStorage.getItem(STORAGE_KEY_SELECTED_ID);
