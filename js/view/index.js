@@ -68,7 +68,7 @@ function removeTodoFromList(id) {
         element.remove();
         }
 }
-function toggleTodo(id, done) {
+function toggleTodoDOM(id, done) {
     const todoElement = document.querySelector(`[data-id="${id}"]`);
     if (!todoElement) return;
     const wrapper = todoElement.querySelector('.taskWrapper');
