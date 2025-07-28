@@ -1,37 +1,37 @@
 'use strict';
-function Student (firstName, lastName, birthYear) {
+class Student {
+constructor (firstName, lastName, birthYear) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.birthYear = birthYear;
     this.studRating = [];
-    this.attendance = []/*new Array(25).fill(null)*/;
+    this.attendance = new Array(25).fill(null);
 }
-console.log(Student);
-Student.prototype.getFullName = function () {
+getFullName() {
     return this.firstName + " " + this.lastName;
 }
-Student.prototype.getAge = function () {
+getAge() {
     return (new Date().getFullYear() - this.birthYear);
 }
-Student.prototype.getAverageMark = function () {
+getAverageMark() {
     if (this.studRating.length === 0) {
         return 0;
     } else {
         return (this.studRating.reduce((acc, curr) => acc + curr, 0) / this.studRating.length);
     }
 }
-Student.prototype.present = function () {
+present() {
     if (this.attendance.length < 25) {
         this.attendance.push(true);
     }
 }
-Student.prototype.absent = function () {
+absent() {
     if (this.attendance.length < 25) {
         this.attendance.push(false);
     }
 }
-Student.prototype.summary = function () {
-    const attendanceRate = this.attendance.filter(Boolean).length/ this.attendance.length;
+summary() {
+    const attendanceRate = this.attendance.filter(Boolean).length / this.attendance.length;
     const averageMark = this.getAverageMark();
     if (attendanceRate > 0.9 && averageMark > 90) {
        return  `Молодець!`;
@@ -40,4 +40,5 @@ Student.prototype.summary = function () {
     } else {
         return `Редиска!`;
     }
+}
 }
