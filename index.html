@@ -52,15 +52,27 @@
         </form>
       </div>
       <div class="col-8">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+  <div aria-live="polite">
+    Active: <strong id="activeCount">0</strong>
+    &nbsp;|&nbsp;
+    Completed: <strong id="completedCount">0</strong>
+  </div>
+  <div class="btn-group" role="group" aria-label="Filters">
+    <button type="button" class="btn btn-outline-secondary filter-btn" data-filter="all">All</button>
+    <button type="button" class="btn btn-outline-secondary filter-btn" data-filter="active">Active</button>
+    <button type="button" class="btn btn-outline-secondary filter-btn" data-filter="completed">Completed</button>
+  </div>
+</div>
         <div class="row" id="todoItems">
         </div>
       </div>
     </div>
   </div>
 </main>
-<script src="./js/controller/index.js"></script>
 <script src="./js/model/index.js"></script>
 <script src="./js/view/index.js"></script>
+<script src="./js/controller/index.js"></script>
 <script src="./js/app.js"></script>
 </body>
 </html>

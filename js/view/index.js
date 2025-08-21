@@ -52,6 +52,15 @@ function renderTodoItem(todo) {
       <button class="btn btn-danger btn-sm delete-btn">Удалить</button>
     </div>
   `;
+  if (todo.done) {
+    col.classList.add('completed');
+    const wrapper = col.querySelector('.taskWrapper');
+    const heading = col.querySelector('.taskHeading');
+    const description = col.querySelector('.taskDescription');
+    wrapper.classList.add('border-sucess', 'opacity-75');
+    heading.classList.add('text-decoration-line-through');
+    description.classList.add('text-muted');
+}
     return col;
 }
 function renderAllTodos(todosArray) {
@@ -85,4 +94,29 @@ function toggleTodoDOM(id, done) {
         heading.classList.remove('text-decoration-line-through');
         description.classList.remove('text-muted');
     }
+    todoElement.classList.toggle('completed', done);
+}
+function updateCounters() {
+    const todos = getTodos();
+    const active = todos.filter(t => !t.done).length;
+    const completed = todos.length - active;
+    const activeEl = document.getElementById('activeCount');
+    const completedEl = document.getElementById('completedCount');
+    activeEl.textContent = active;
+    completedEl.textContent = completed;
+}
+function applyFilterToItem(todoElement, todo, filter) {
+    const show = 
+    filter === 'all' || (filter === 'active' && !todo.completed) || (filter === 'completed' && todo.completed);
+    todoElement.hidden = !show;
+}
+function applyFilter(filter) {
+    const todos = getTodos();
+    const nodes = document.querySelectorAll('#todoItems [data-id]');
+    nodes.forEach(el => {
+        const id = el.dataset.id;
+        const todo = todos.find(t => t.id === id);
+        if (!todo) return;
+        applyFilterToItem(el, todo, filter);
+    });
 }
