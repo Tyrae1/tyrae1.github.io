@@ -57,7 +57,7 @@ function renderTodoItem(todo) {
     const wrapper = col.querySelector('.taskWrapper');
     const heading = col.querySelector('.taskHeading');
     const description = col.querySelector('.taskDescription');
-    wrapper.classList.add('border-sucess', 'opacity-75');
+    wrapper.classList.add('border-success', 'opacity-75');
     heading.classList.add('text-decoration-line-through');
     description.classList.add('text-muted');
 }
@@ -107,7 +107,7 @@ function updateCounters() {
 }
 function applyFilterToItem(todoElement, todo, filter) {
     const show = 
-    filter === 'all' || (filter === 'active' && !todo.completed) || (filter === 'completed' && todo.completed);
+    filter === 'all' || (filter === 'active' && !todo.done) || (filter === 'completed' && todo.done);
     todoElement.hidden = !show;
 }
 function applyFilter(filter) {
