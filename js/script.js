@@ -14,6 +14,7 @@ function fetchUserData(id) {
 function getUsersData(userIds) {
     const promises = userIds.map(userId => fetchUserData(userId));
     return Promise.allSettled(promises).then(result => {
+        console.log('All settled:',result);
         const success = result
             .filter(r => r.status === 'fulfilled')
             .map(r => r.value);
