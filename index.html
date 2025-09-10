@@ -10,17 +10,15 @@
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="80" tabindex="0">
 <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary fixed-top" id="navbar">
     <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="./elements/badge.png" alt="My badge" style="height: 2rem;">
+        <a class="navbar-brand d-flex align-items-center" href="#badge">
+            <img class="badge" src="./elements/badge.png" alt="My badge" style="height: 2rem;">
         </a>
-
         <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
@@ -43,7 +41,15 @@
                 <img src="./elements/img.png" class="img-thumbnail w-75" alt="My portrait">
             </div>
             <div class="col-md-8">
-                Junior Frontend Developer. Learning JavaScript in Hillel IT School.
+                <div class="row mb-3">
+                    Junior Frontend Developer. Learning JavaScript in Hillel IT School.
+                </div>
+                <div class="row mb-3">
+                    I'm Switching from energy supply sphere.
+                </div>
+                <div class="row mb-3">
+                    Like snowboarding, fencing, car driving.
+                </div>
             </div>
         </div>
     </div>
@@ -83,11 +89,39 @@
             </div>
         </div>
 </section>
-<section id="projects" class="container-fluid scroll-margin-top my-5 py-5">
+<section id="projects" class=scroll-margin-top my-5 py-5">
     <div class="container">
-        <div class=" fw-bold fs-1">Projects</div>
+        <div class="container fw-bold fs-1">Projects</div>
+        <div class="d-flex gap-3 flex-wrap">
+        <div class="card" style="width: 18rem;">
+            <img src="https://cdn.pixabay.com/photo/2025/08/09/16/51/wildlife-9764923_1280.jpg" class="card-img-top" alt="first img">
+            <div class="card-body">
+                <h5 class="card-title">This bootstrap page</h5>
+                <p class="card-text">My Bootstrap practice page</p>
+                <a href="https://github.com/Tyrae1/tyrae1.github.io/tree/hw-53" target="_blank"
+                   rel="noopener noreferrer" class="btn btn-primary">Github link</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="https://cdn.pixabay.com/photo/2025/08/09/16/51/wildlife-9764923_1280.jpg" class="card-img-top" alt="first img">
+            <div class="card-body">
+                <h5 class="card-title">This bootstrap page</h5>
+                <p class="card-text">My Bootstrap practice page</p>
+                <a href="https://github.com/Tyrae1/tyrae1.github.io/tree/hw-53 " target="_blank"
+                   rel="noopener noreferrer" class="btn btn-primary">Github link</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="https://cdn.pixabay.com/photo/2025/08/09/16/51/wildlife-9764923_1280.jpg" class="card-img-top" alt="first img">
+            <div class="card-body">
+                <h5 class="card-title">This bootstrap page</h5>
+                <p class="card-text">My Bootstrap practice page</p>
+                <a href="https://github.com/Tyrae1/tyrae1.github.io/tree/hw-53" target="_blank"
+                   rel="noopener noreferrer" class="btn btn-primary">Github link</a>
+            </div>
+        </div>
+        </div>
     </div>
-
 </section>
 <section id="contacts" class="container-fluid scroll-margin-top pt-5 py-5">
     <div class="container">
