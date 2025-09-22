@@ -1,0 +1,26 @@
+html, body, #root {
+  height: 100%;
+}
+#root {
+  min-height: 100dvh;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.main-offset {
+  padding-top: 56px;
+}
+
+.container-narrow {
+  max-width: 960px;
+}
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
