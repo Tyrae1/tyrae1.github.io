@@ -70,6 +70,11 @@ export default class TodoApp extends React.Component{
         return (
             <div className="container py-4">
                 <h1 className="h3 mb-3">Todo (class)</h1>
+                <TodoList
+                    todos={visibleTodos}
+                    onToggle={this.toggleTodo}
+                    onDelete={this.deleteTodo}
+                />
                 <TodoForm
                     title={draftTitle}
                     description={draftDescription}
@@ -82,11 +87,7 @@ export default class TodoApp extends React.Component{
                         this.setState({draftTitle: '', draftDescription: ''});
                     }}
                     />
-                <TodoList
-                    todos={visibleTodos}
-                    onToggle={this.toggleTodo}
-                    onDelete={this.deleteTodo}
-                    />
+
                 <div className="mt-3 d-flex gap-2">
                     <button className={btn('all')} onClick={() => this.setFilter('all')}>All</button>
                     <button className={btn('active')} onClick={() => this.setFilter('active')}>Active</button>
