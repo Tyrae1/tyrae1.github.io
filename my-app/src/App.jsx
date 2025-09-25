@@ -3,8 +3,9 @@ import Button from 'react-bootstrap/Button';
 import UserApp from "./components/UserApp.jsx";
 
 
-export default class App extends Component {
-    render() {
+export default function App() {
+    
         return <UserApp />;
-    }
+        
 }
+<Button variant="primary">Click</Button>

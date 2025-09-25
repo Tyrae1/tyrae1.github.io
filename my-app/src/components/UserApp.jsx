@@ -1,102 +1,155 @@
 import React from "react";
 import UserForm from "./UserForm.jsx";
 import UserList from "./UserList.jsx";
+import {Container, Row, Col} from "react-bootstrap";
 
-const STORAGE_KEY_TODOS = 'todos';
+const STORAGE_KEY_USERS = 'users';
 
 export default class UserApp extends React.Component{
     constructor(props) {
         super(props);
         let saved = [];
-        try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY_TODOS)) || []; }
+        try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY_USERS)) || []; }
         catch { saved = []; }
         this.state = {
-            todos: saved,
-            filter: "all",
-            draftTitle: '',
-            draftDescription: '',
+            users: saved,
+            draftFirstName: '',
+            draftLastName: '',
+            draftAge: '',
+            photoFile: null,
+            photoPreview: null,
+            photoError: null,
         };
     }
-    addTodo = (title, description) => {
-        const newTodo = {
+    addUser = ({firstName, lastName, age, photoURL}) => {
+        const newUser = {
             id: Date.now().toString(),
-            title: title.trim(),
-            description: description.trim(),
-            done: false,
+            firstName: firstName.trim(),
+            lastName: lastName.trim(),
+            age: Number(age),
+            photoURL,
             createdAt: new Date().toISOString(),
         };
         this.setState(
-            prev => ({todos: [newTodo, ...prev.todos]}),
+            prev => ({users: [newUser, ...prev.users]}),
         );
     };
-    toggleTodo = (id) => {
+    deleteUser = (id) => {
         this.setState(
-            prev => ({
-                todos: prev.todos.map(t=>
-                    t.id === id? {...t, done: !t.done} :t )
-            }));
-    };
-    editTodo = (updatedTodo) => {
-        this.setState(
-            prev => ({
-                todos: prev.todos.map(t=> t.id === updatedTodo.id ? updatedTodo : t)
-            }));
-    };
-    deleteTodo = (id) => {
-        this.setState(
-            prev => ({todos: prev.todos.filter(t => t.id !== id)}));
-    };
-    clearCompleted = () => {
-        this.setState(
-            prev => ({todos: prev.todos.filter(t => !t.done)})
-        );
+            prev => ({users: prev.users.filter(u => u.id !== id)}));
     };
     componentDidUpdate(prevProps, prevState){
-        if (prevState.todos !== this.state.todos) {
-            localStorage.setItem(STORAGE_KEY_TODOS, JSON.stringify(this.state.todos));
+        if (prevState.users !== this.state.users) {
+            localStorage.setItem(STORAGE_KEY_USERS, JSON.stringify(this.state.users));
         }
     }
-    clearAll = () => this.setState({todos: []})
-    setFilter = (filter) => this.setState({filter})
+    clearAll = () => this.setState({users: []})
+
+    handlePhotoChange = (e) => {
+        const file=e.target.files && e.target.files[0];
+        this.setState({photoError: null});
+        if (!file) {
+            if (this.state.photoPreview) {
+                URL.revokeObjectURL(this.state.photoPreview);
+            }
+            this.setState({photoFile: null, photoPreview: null});
+            return;
+        }
+
+        if (!file.type.startsWith("image/")) {
+            this.setState({photoFile: null, photoPreview: null, photoError: "Choose another image!"});
+            return;
+        }
+
+        if (this.state.photoPreview) {
+            URL.revokeObjectURL(this.state.photoPreview);
+        }
+
+        const preview = URL.createObjectURL(file);
+        this.setState({photoFile: file, photoPreview: preview});
+    };
+
+    handleSubmit = (e)=> {
+        e.preventDefault();
+        const {draftFirstName, draftLastName, draftAge, photoFile, photoPreview} = this.state;
+        const ageNum = Number(draftAge);
+        const isValid = 
+            draftFirstName.trim() &&
+            draftLastName.trim() &&
+            draftAge !== "" &&
+            Number.isInteger(ageNum) &&
+            ageNum>=0 &&
+            photoFile;
+
+            if (!isValid) return;
+
+            this.addUser({
+                firstName: draftFirstName,
+                lastName: draftLastName,
+                age: ageNum,
+                photoURL: photoPreview,
+            });
+            
+            this.setState (
+                {
+                draftFirstName: "",
+                draftLastName: "",
+                draftAge: "",
+                photoFile: null,
+                photoPreview: null,
+                photoError: null, 
+                },
+                ()=>{
+
+                }
+            );
+    };
 
     render(){
-        const {todos, filter, draftTitle, draftDescription} = this.state;
-        const btn = (f) => filter === f ? "btn btn-secondary" : "btn btn-outline-secondary";
-        const visibleTodos = todos.filter(t=>{
-            if (filter === 'active') return !t.done;
-            if (filter === 'completed') return t.done;
-            return true;
-        });
+        const {users} = this.state;
+
         return (
-            <div className="container py-4">
-                <h1 className="h3 mb-3">Todo (class)</h1>
+            <Container className="py-4">
+                <Row>
+                    <Col md={4}>
+                    <UserForm
+                    firstName={this.state.draftFirstName}
+                    lastName={this.state.draftLastName}
+                    age={this.state.draftAge}
+                    previewUrl={this.state.photoPreview}
+                    photoError={this.state.photoError}
+                    isValid={
+                        this.state.draftFirstName.trim() &&
+                        this.state.draftLastName.trim() &&
+                        this.state.draftAge !== "" &&
+                        Number.isInteger(Number(this.state.draftAge)) &&
+                        Number(this.state.draftAge) >=0 &&
+                        Boolean(this.state.photoFile)
+                    }
+                    onFirstNameChange={(e) => this.setState({draftFirstName: e.target.value})}
+                    onLastNameChange={(e) => this.setState({draftLastName: e.target.value})}
+                    onAgeChange={(e)=> this.setState({draftAge: e.target.value})}
+                    onPhotoChange={this.handlePhotoChange}
+                    onSubmit={this.handleSubmit}
+                    />
+                    </Col>
+                    <Col md={8}>
+                    <h1 className="h3 mb-3">Users</h1>
+                    <div className="mb-3 d-flex gap-2">
+                    
+                    <button className="btn btn-outline-danger ms-auto" onClick={this.clearAll}>Clear all</button>
+                </div>      
                 <UserList
-                    todos={visibleTodos}
-                    onToggle={this.toggleTodo}
-                    onDelete={this.deleteTodo}
+                    users={this.state.users}
+                    onDelete={this.deleteUser}
                 />
-                <UserForm
-                    title={draftTitle}
-                    description={draftDescription}
-                    onTitleChange={(e)=> this.setState({draftTitle: e.target.value})}
-                    onDescriptionChange={(e)=> this.setState({draftDescription: e.target.value})}
-                    onSubmit={(e)=> {
-                        e.preventDefault();
-                        if (!draftTitle.trim()) return;
-                        this.addTodo(draftTitle, draftDescription);
-                        this.setState({draftTitle: '', draftDescription: ''});
-                    }}
-                />
+                    </Col>
+                </Row>
+            </Container>
+                
+                
+                
 
-                <div className="mt-3 d-flex gap-2">
-                    <button className={btn('all')} onClick={() => this.setFilter('all')}>All</button>
-                    <button className={btn('active')} onClick={() => this.setFilter('active')}>Active</button>
-                    <button className={btn('completed')} onClick={() => this.setFilter('completed')}>Completed</button>
-
-                    <button className="btn btn-outline-warning ms-auto" onClick={this.clearCompleted}>Clear completed</button>
-                    <button className="btn btn-outline-danger" onClick={this.clearAll}>Clear all</button>
-                </div>
-            </div>
         );
     }
 }
