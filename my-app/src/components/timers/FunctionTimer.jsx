@@ -1,14 +1,14 @@
 import React, {useEffect, useRef, useState} from 'react';
 import TimerPanel from '../TimerPanel';
 
-const STORAGE_KEY_SECONDS = 'seconds';
+const STORAGE_KEY_SECONDS_FUNCTION = 'seconds_function';
 
 export default function FunctionTimer({storageKey}) {
     const [seconds, setSeconds] = useState(0);
     const [running, setRunning] = useState(false);
     const intervalRef = useRef(null);
     useEffect(() => {
-        const raw = localStorage.getItem(STORAGE_KEY_SECONDS);
+        const raw = localStorage.getItem(STORAGE_KEY_SECONDS_FUNCTION);
         if (raw !== null) {
             try {
                 const parsed = JSON.parse(raw);
@@ -20,7 +20,7 @@ export default function FunctionTimer({storageKey}) {
 
     useEffect(() => {
         console.log("Component updated:", seconds);
-        localStorage.setItem(STORAGE_KEY_SECONDS, JSON.stringify(seconds));
+        localStorage.setItem(STORAGE_KEY_SECONDS_FUNCTION, JSON.stringify(seconds));
     }, [seconds]);
 
     useEffect(() => {
@@ -29,19 +29,17 @@ export default function FunctionTimer({storageKey}) {
                 setSeconds(prev => prev + 1);
             }, 1000);
         }
-        return () => {
+        return () =>
             clearInterval(intervalRef.current);
-            intervalRef.current = null;
-        };
     }, [running]);
 
     const handleStart = () => setRunning(true);
     const handleStop = () => setRunning(false);
-    const handleReset = () => {setSeconds(0); localStorage.setItem(STORAGE_KEY_SECONDS, JSON.stringify(0)); };
+    const handleReset = () => {setSeconds(0); localStorage.setItem(STORAGE_KEY_SECONDS_FUNCTION, JSON.stringify(0)); };
 
     const timerClass = `display-3 timer ${running ? "" : "stopped"}`;
     return (
-        <div>
+        <div className="timer-area">
             <div className={timerClass}>{seconds}s</div>
             <TimerPanel
             onStart={handleStart}

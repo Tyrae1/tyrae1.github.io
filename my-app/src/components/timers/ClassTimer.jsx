@@ -1,22 +1,19 @@
 import React from 'react';
 import TimerPanel from '../TimerPanel';
 
-const STORAGE_KEY_SECONDS = 'seconds';
+const STORAGE_KEY_SECONDS_CLASS = 'seconds_class';
 
 export default class ClassTimer extends React.Component {
     constructor(props) {
         super(props);
-        const raw = localStorage.getItem(STORAGE_KEY_SECONDS);
         let saved = 0;
-        if (raw !== null) {
-            try {
+        try {
+        const raw = localStorage.getItem(STORAGE_KEY_SECONDS_CLASS);
+        if (raw != null) {
                 const parsed = JSON.parse(raw);
-                saved = Number.isFinite(parsed) ? parsed: 0;
-            } catch {
-                const n = Number(raw);
-                saved = Number.isFinite(n) ? n: 0;
+                if (Number.isFinite(parsed)) saved = Number(parsed);
             }
-        }
+        } catch {}
         this.state = {
             seconds: saved,
             running: false,
@@ -29,7 +26,7 @@ export default class ClassTimer extends React.Component {
     componentDidUpdate(prevProps, prevState) {
         if (prevState.seconds !== this.state.seconds) {
             console.log("Component updated:", this.state.seconds);
-            localStorage.setItem(STORAGE_KEY_SECONDS, JSON.stringify(this.state.seconds));
+            localStorage.setItem(STORAGE_KEY_SECONDS_CLASS, JSON.stringify(this.state.seconds));
         }
     }
     componentWillUnmount() {
@@ -49,14 +46,14 @@ export default class ClassTimer extends React.Component {
         this.setState({ running: false });
     }
     handleReset = () => {
-        this.setState({ seconds: 0 });
-        localStorage.setItem(STORAGE_KEY_SECONDS, JSON.stringify(0));
+        this.setState({ seconds: 0, running: false });
+        localStorage.setItem(STORAGE_KEY_SECONDS_CLASS, JSON.stringify(0));
     }
     render() {
         const {seconds, running} = this.state;
         const timerClass = `display-3 timer ${running ? "" : "stopped"}`;
         return (
-            <div>
+            <div className="timer-area">
                 <div className={timerClass}>{seconds}s</div>
                 <TimerPanel
                     onStart={this.handleStart}
