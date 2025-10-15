@@ -1,16 +1,16 @@
-import React from 'react';
 import {Container, Alert, Spinner} from 'react-bootstrap';
 import SearchBar from './components/SearchBar.jsx';
 import WeatherCard from './components/WeatherCard.jsx';
 import FavoriteList from './components/FavoriteList';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
+import useWeather from './hooks/useWeather.js';
 
 function App() {
-    const [weather, setWeather] = useState(null);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
     const [favorite, setFavorite] = useState([]);
     const favKey = (name, country, lat, lon) => `${name}|${country}|${lat}|${lon}`;
+    const {weather, loading, error, fetchWeather, fetchByCoords} = useWeather();
+
+    const handleSearch = (city) => fetchWeather(city);
 
     const handleAddFavorite = (w) => {
         const id = favKey(w.city, w.country, w.latitude, w.longitude);
@@ -35,66 +35,25 @@ function App() {
     };
 
     const handleFavorite = (fav) => {
-        handleSearch(`${fav.name}`);
+        fetchByCoords(fav.lat, fav.lon, fav.name, fav.country);
     };
     const handleRemoveFavorite = (id) => {
         setFavorite((prev)=> prev.filter((x)=> x.id !== id));
     };
-    const handleSearch = async (city) => {
-        setError(null);
-        setLoading(true);
-        setWeather(null);
+
+    useEffect(() => {
         try {
-            const geoUrl = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(city)}&count=1&language=uk`;
-            const geoRes = await fetch(geoUrl);
-            const geoData = await geoRes.json();
+            const raw = localStorage.getItem('favorite-cities');
+            if (raw) setFavorite(JSON.parse(raw));
+        } catch {}
+    }, []);
 
-            if (!geoData.results || geoData.results.length === 0) {
-                setError('City is not find. Try another city!');
-                setLoading(false);
-                return;
-            }
+    useEffect(() => {
+        try {
+            localStorage.setItem('favorite-cities', JSON.stringify(favorite));
+        } catch {}
+    }, [favorite]);
 
-            const {name, country, latitude, longitude} = geoData.results[0];
-            console.log('lat/lon:', latitude, longitude);
-
-            const wUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&daily=temperature_2m_max,temperature_2m_min&timezone=auto`;
-            console.log('weather URL:', wUrl);
-
-            const wRes = await fetch(wUrl, {method: 'GET', mode: 'cors'});
-            console.log('weather status:', wRes.status);
-
-            if (!wRes.ok) {
-                const text = await wRes.text().catch(() => '');
-                throw new Error(`Weather HTTP ${wRes.status}: ${text.slice(0, 200)}`);
-            }
-            const wData = await wRes.json();
-
-            const current = {
-                temperature: wData.current_weather?.temperature ?? null,
-                windspeed: wData.current_weather?.windspeed ?? null,
-            };
-            const days = (wData.daily?.time || []).map((date, i) => ({
-                date,
-                tmin: wData.daily?.temperature_2m_min?.[i] ?? null,
-                tmax: wData.daily?.temperature_2m_max?.[i] ?? null,
-            }));
-
-            setWeather({
-                city: name,
-                country,
-                latitude,
-                longitude,
-                current,
-                days: days.slice(0, 5),
-            });
-        } catch (err) {
-            console.error('weather fetch error:', err);
-            throw err;
-        } finally {
-            setLoading(false);
-        }
-    };
     return (
         <Container className="py-5 text-center" style={{maxWidth: 720}}>
             <h1 className="mb-4">Weather forecast</h1>

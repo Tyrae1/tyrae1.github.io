@@ -14,7 +14,9 @@ function FavoriteList({items=[], onSelect, onRemove}) {
                     <ListGroup.Item
                         key={fav.id}
                         className="d-flex justify-content-between align-items-center"
-                        >
+                        onClick={() => onSelect?.(fav)}
+                        style = {{cursor: 'pointer'}}
+                    >
                         <div>
                             <strong>{fav.name}</strong>
                             {fav.country ? <span className="text-muted">, {fav.country}</span> : null}
