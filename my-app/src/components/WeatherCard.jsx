@@ -1,15 +1,24 @@
-import {Card, ListGroup} from 'react-bootstrap';
+import {Button, Card, ListGroup} from 'react-bootstrap';
 
-function WeatherCard({data}) {
+function WeatherCard({data, isFavorite=false, onAddFavorite, onRemoveFavorite}) {
     const {city, country, current, days} = data;
 
     return (
         <Card className="mx-auto text-start" style={{maxWidth: 520}}>
             <Card.Body>
-                <Card.Title className="mb-2">
-                    {city}, {country}
+                <Card.Title className="mb-2 d-flex justify-content-between align-items-center">
+                    <span>{city}, {country}</span>
+                    {isFavorite ? (
+                        <Button size="sm" variant="outline-danger" onClick={onRemoveFavorite}>
+                            Delete from Favorites
+                        </Button>
+                    ) : (
+                        <Button size="sm" variant="outline-warning" onClick={onAddFavorite} aria-label="Add to Favorites">
+                            ⭐ Add to Favorites
+                        </Button>
+                    )}
                 </Card.Title>
-                <Card.Subtitle className="mb-3" text-muted>
+                <Card.Subtitle className="mb-3 text-muted">
                     Current Weather
                 </Card.Subtitle>
                 <div className="fs-4 mb-1">

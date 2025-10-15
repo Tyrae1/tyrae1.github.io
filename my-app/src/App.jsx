@@ -9,11 +9,41 @@ function App() {
     const [weather, setWeather] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [favorite, setFavorite] = useState([]);
+    const favKey = (name, country, lat, lon) => `${name}|${country}|${lat}|${lon}`;
+
+    const handleAddFavorite = (w) => {
+        const id = favKey(w.city, w.country, w.latitude, w.longitude);
+        setFavorite((prev) => {
+            if (prev.some(f => f.id === id)) return prev;
+            return [
+                ...prev,
+                {
+                    id,
+                    name: w.city,
+                    country: w.country,
+                    lat: w.latitude,
+                    lon: w.longitude,
+                },
+            ];
+        });
+    };
+
+    const handleRemoveFavoriteByWeather = (w) => {
+      const id = favKey(w.city, w.country, w.latitude, w.longitude);
+      setFavorite((prev) => prev.filter(f => f.id !== id));
+    };
+
+    const handleFavorite = (fav) => {
+        handleSearch(`${fav.name}`);
+    };
+    const handleRemoveFavorite = (id) => {
+        setFavorite((prev)=> prev.filter((x)=> x.id !== id));
+    };
     const handleSearch = async (city) => {
         setError(null);
         setLoading(true);
         setWeather(null);
-
         try {
             const geoUrl = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(city)}&count=1&language=uk`;
             const geoRes = await fetch(geoUrl);
@@ -53,6 +83,8 @@ function App() {
             setWeather({
                 city: name,
                 country,
+                latitude,
+                longitude,
                 current,
                 days: days.slice(0, 5),
             });
@@ -72,12 +104,23 @@ function App() {
                     <Spinner animation="border" />
                 </div>
             )}
-            {error && <Alert variant="danger" className="mx-auto" style={{maxWidth: 520}}>
+            {error && (<Alert variant="danger" className="mx-auto" style={{maxWidth: 520}}>
                 {error}
-            </Alert>}
-            {!loading && !error && weather && <WeatherCard data={weather} />}
+            </Alert>)}
+            {!loading && !error && weather && (
+                <WeatherCard
+                    data={weather}
+                    isFavorite={favorite.some(f => f.id === `${weather.city}|${weather.country}|${weather.latitude}|${weather.longitude}`)}
+                    onAddFavorite={() => handleAddFavorite(weather)}
+                    onRemoveFavorite={() => handleRemoveFavoriteByWeather(weather)}
+                    />
+            )}
         <hr className="my-5" />
-            <FavoriteList/>
+            <FavoriteList
+            items = {favorite}
+            onSelect={handleFavorite}
+            onRemove={handleRemoveFavorite}
+            />
         </Container>
     );
 }
