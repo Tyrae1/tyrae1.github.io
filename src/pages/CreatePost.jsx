@@ -45,7 +45,7 @@ const CreatePost = () => {
 
     return (
         <div>
-            <PageHeader title="Create User" />
+            <PageHeader title="Create Post" />
 
             {isRequestSuccess ? <Alert variant={'success'} className="text-center">Data Saved!</Alert> : null}
 

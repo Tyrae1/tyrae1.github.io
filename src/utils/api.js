@@ -25,4 +25,17 @@ export const createPost = (payload) => {
         })
 }
 
+export const updatePost = async (id, payload) => {
+    return fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+            id,
+            title: payload.title,
+            body: payload.body,
+            userId: 1
+        }),
+        headers: {'Content-type': 'application/json; charset=UTF-8'},
+    });
+}
+
 

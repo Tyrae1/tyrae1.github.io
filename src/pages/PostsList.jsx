@@ -4,7 +4,7 @@ import {fetchData} from "../utils/api.js";
 import {useEffect, useState} from "react";
 import CustomTable from "../components/CustomTable/CustomTable";
 import nameNormalizer from "../utils/nameNormalizer.js";
-import {useNavigate} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import routerPaths from "../router/routerPaths.js";
 
 const PostsList = () => {
@@ -14,6 +14,7 @@ const PostsList = () => {
     const [isError, setIsError] = useState(false);
     const [showDeleteModal, setShowDeleteModal] = useState(false);
     const [deletePostId, setDeletePostId] = useState(null);
+    const location = useLocation();
 
     useEffect(() => {
         loadPosts();
@@ -21,11 +22,17 @@ const PostsList = () => {
 
     const loadPosts = async () => {
         setLoading(true)
-        let data = null;
-
         try {
-            data = await fetchData('/posts?_limit=10');
-            setPosts(data);
+            const data = await fetchData('/posts?_limit=10');
+            const u = location.state?.updated;
+            if (u) {
+                const uid = Number(u.id);
+                const merged = data.map(p => p.id === uid ? {...p, ...u, id: uid} : p);
+                setPosts(merged);
+                window.history.replaceState({}, document.title);
+            } else {
+                setPosts(data);
+            }
             setIsError(false);
         } catch (error) {
             console.log(error)
